@@ -1,0 +1,108 @@
+---
+output: github_document
+---
+
+# sindicatoscl
+
+Paquete R para acceder a registro administrativo de sindicatos activos y en receso en Chile (1920-2021)
+
+# Instalar y cargar paquete
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("nicolasrattor/sindicatoscl")
+```
+
+```{r}
+library(sindicatoscl)
+```
+
+
+# Uso del paquete
+
+## Obtener el registro en bruto
+
+```{r eval=FALSE}
+sindicatos
+```
+
+```{r echo=FALSE}
+dim(sindicatos)
+knitr::kable(head(sindicatos[,1:4]))
+names(sindicatos[,5:ncol(sindicatos)])
+```
+
+## Agrupar por empresa
+
+```{r eval=FALSE}
+empresas_sindicatos_activos()
+```
+
+```{r echo=FALSE}
+head(empresas_sindicatos_activos())
+```
+
+
+## Serie histórica sindicatos constituidos
+
+```{r}
+serie <- constitucion_anual()
+plot(serie$ano,serie$sindicatos,type = "l")
+```
+
+
+## Serie histórica activos
+
+```{r}
+serie <- activos_historico(desde=2020,hasta=2021)
+serie$fecha <- lubridate::make_date(year=serie$ano,month=serie$mes)
+plot(serie$fecha,serie$sindicatos,type = "l")
+```
+
+
+
+## Consultar sindicatos activos por fecha
+
+```{r}
+nrow(activos_en(ano=1990,mes=1))
+head(activos_en(ano=1990,mes=1)[,c(1:4)])
+```
+
+
+
+## Consultar por nombre sindicato o empresa
+
+```{r}
+buscar_sindicatos(empresa_buscada="walmart",sindicato_buscado="lider")[,c(2,3)]
+buscar_sindicatos(empresa_buscada="codelco",sindicato_buscado="")[,c(2,3)]
+buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3)]
+```
+
+
+
+## Obtener solo a los sindicatos activos (en 2021)
+
+```{r eval=FALSE}
+sindicatos_activos()
+```
+
+```{r echo=FALSE}
+dim(sindicatos_activos())
+knitr::kable(head(sindicatos_activos()[,1:4]))
+```
+
+
+## Obtener solo a los sindicatos de empresa
+
+```{r eval=FALSE}
+sindicatos_empresas()
+```
+
+```{r echo=FALSE}
+dim(sindicatos_empresas())
+knitr::kable(head(sindicatos_empresas()[,1:4]))
+```
+
+# Sobre los datos usados
+
+Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descargarse en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>
