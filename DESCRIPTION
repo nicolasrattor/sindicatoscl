@@ -1,17 +1,22 @@
 Package: sindicatoscl
 Type: Package
-Title: What the Package Does (Title Case)
+Title: datos de sindicatos activos y en receso en Chile entre 1920 y 2021
 Version: 0.3.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: 
+    person(given = "Nicolás",
+           family = "Ratto",
+           role = c("aut", "cre"),
+           email = "nicolasrattor@gmail.com",
+           comment = c(ORCID = "0000-0003-1462-0238"))
+Maintainer: Nicolás Ratto <nicolasrattor@gmail.com>
+Description: datos de sindicatos activos y en receso en Chile entre 1920 y 2021
+License: CC0
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
 RoxygenNote: 7.1.1
+URL: https://github.com/nicolasrattor/sindicatoscl
 Imports: 
     lubridate,
     dplyr,
