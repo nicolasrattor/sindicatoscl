@@ -48,4 +48,33 @@ sindicatos <- sindicatos %>% rename(estado=glosa,
   select(-fono,-email,-column1,-fecha_deposito_estatutos) %>%
   mutate(total_socis=socios+socias)
 
-usethis::use_data(sindicatos, internal = TRUE, overwrite = TRUE)
+# exportar
+#usethis::use_data(sindicatos, internal = TRUE, overwrite = TRUE)
+
+
+
+
+
+#### sii ####
+
+load(file="data-raw/sii.Rdata")
+sii$rut_empresa <- sii$rut
+sii$rut <- NULL
+sii$rut_empresa <- as.character(sii$rut_empresa)
+sii$nt_sii <- as.numeric(sii$nt_sii)
+sii <- dplyr::mutate(sii,nt_sii=dplyr::if_else(nt_sii==0,NA_real_,nt_sii))
+
+
+#usethis::use_data(sindicatos,sii, internal = TRUE, overwrite = TRUE)
+
+
+
+#### exportar
+
+#save(sindicatos,file="data/sindicatos.Rdata")
+#save(sii,file="data/sii.Rdata")
+
+usethis::use_data(sindicatos,sii)
+
+
+

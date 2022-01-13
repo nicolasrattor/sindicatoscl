@@ -6,6 +6,7 @@
 #'
 #'
 #'
+#' @export
 #'
 #' @examples
 #' empresas_sindicatos_activos()

@@ -2,16 +2,15 @@
 % Please edit documentation in R/activos_en.R
 \name{activos_en}
 \alias{activos_en}
-\title{Cuenta los sindicatos en constitución o activos en cada periodo (año o mes)}
+\title{Cuenta los sindicatos en constitución o activos en cada periodo}
 \usage{
 activos_en(ano = 2021, mes = 6)
 }
 \description{
-Cuenta los sindicatos en constitución o activos en cada periodo (año o mes)
+Cuenta los sindicatos en constitución o activos en cada periodo
 }
 \examples{
-constitucion_anual()
-activos_historico(desde=2020,hasta=2021)
+
 activos_en(ano=1990,mes=1)
 
 }

@@ -6,6 +6,7 @@
 #'
 #'
 #'
+#' @export
 #'
 #' @examples
 #' sindicatos_activos()

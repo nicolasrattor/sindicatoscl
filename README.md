@@ -1,5 +1,5 @@
 
-# sindicatoscl
+# sindicatoscl <img src="img/logores.PNG" align="right" width = "120px"/>
 
 Paquete R para acceder a registro administrativo de sindicatos activos y
 en receso en Chile (1920-2021)
@@ -181,8 +181,78 @@ sindicatos_empresas()
 |      4 |  4040071 | S.T.E.DE TRANSPORTES PONCE Y LICCI LTDA.                         | RECESO |
 |      3 |  3020041 | S.T.E.N2 DESARROLLOS,MINERIA Y CIA. LTDA.,ESTAB.EL HUESO,POTRER. | RECESO |
 
+## Obtener datos del Servicio de Impuestos Internos
+
+``` r
+datos <- sii_agregar()
+knitr::kable(
+  dplyr::mutate(
+  as.data.frame(
+    round(
+      prop.table(
+        table(datos$rubro_sii,useNA="ifany")),3)
+    ),Freq=Freq*100
+  )
+)
+```
+
+| Var1                                                                             | Freq |
+|:---------------------------------------------------------------------------------|-----:|
+| ACTIVIDADES ARTISTICAS, DE ENTRETENIMIENTO Y RECREATIVAS                         |  1.3 |
+| ACTIVIDADES DE ALOJAMIENTO Y DE SERVICIO DE COMIDAS                              |  2.9 |
+| ACTIVIDADES DE ATENCION DE LA SALUD HUMANA Y DE ASISTENCIA SOCIAL                |  2.9 |
+| ACTIVIDADES DE ORGANIZACIONES Y ORGANOS EXTRATERRITORIALES                       |  0.0 |
+| ACTIVIDADES DE SERVICIOS ADMINISTRATIVOS Y DE APOYO                              |  8.2 |
+| ACTIVIDADES FINANCIERAS Y DE SEGUROS                                             |  2.1 |
+| ACTIVIDADES INMOBILIARIAS                                                        |  1.2 |
+| ACTIVIDADES PROFESIONALES, CIENTIFICAS Y TECNICAS                                |  2.6 |
+| ADMINISTRACION PUBLICA Y DEFENSA; PLANES DE SEGURIDAD SOCIAL DE AFILIACION OBLIG |  0.2 |
+| AGRICULTURA, GANADERIA, SILVICULTURA Y PESCA                                     |  4.1 |
+| COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACION DE VEHICULOS AUTOMOTORES Y MOTO | 11.2 |
+| CONSTRUCCION                                                                     |  3.1 |
+| ENSEÑANZA                                                                        | 12.4 |
+| EXPLOTACION DE MINAS Y CANTERAS                                                  |  3.0 |
+| INDUSTRIA MANUFACTURERA                                                          | 17.8 |
+| INFORMACION Y COMUNICACIONES                                                     |  2.0 |
+| OTRAS ACTIVIDADES DE SERVICIOS                                                   |  4.8 |
+| SUMINISTRO DE AGUA; EVACUACION DE AGUAS RESIDUALES, GESTION DE DESECHOS Y DESCON |  1.5 |
+| SUMINISTRO DE ELECTRICIDAD, GAS, VAPOR Y AIRE ACONDICIONADO                      |  1.1 |
+| TRANSPORTE Y ALMACENAMIENTO                                                      |  9.4 |
+| Valor por Defecto                                                                |  0.1 |
+| NA                                                                               |  8.2 |
+
+**Tasa de sindicalización**
+
+Proporción de sindicatos con tasa de sindicalización válida
+
+``` r
+nrow(datos[datos$tasa_sindicalizacion<=1&!is.na(datos$tasa_sindicalizacion),])/nrow(datos)
+```
+
+    ## [1] 0.8672054
+
+Resumen variable tasa de sindicalización
+
+``` r
+summary(datos[datos$tasa_sindicalizacion<=1,]$tasa_sindicalizacion)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    ##  0.0002  0.0544  0.1619  0.2272  0.3499  1.0000     842
+
 # Sobre los datos usados
 
 Registros administrativos de acceso público de la Dirección del Trabajo.
-Disponibles para descargarse en:
-<https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>
+Disponibles para descarga en:
+<https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>.
+Los datos utilizados en el paquete fueron descargados el 2022-01-12 y
+son actualizados el último día de cada mes.
+
+# Uso de los datos
+
+Los Registros administrativos de la Dirección del Trabajo los hemos
+utilizado en el [Repositorio de Estadísticas
+Sindicales](https://repositoriosindical.netlify.app/), para la
+elaboración de la [**Minuta N°1** Sindicatos en la coyuntura del
+estallido social y la pandemia
+(2018-2021)](https://github.com/nicolasrattor/Ventanilla_Sindicatos_DT/raw/main/Minuta1/Minuta1.pdf).

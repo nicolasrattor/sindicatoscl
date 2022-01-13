@@ -2,9 +2,10 @@
 output: github_document
 ---
 
-# sindicatoscl
+# sindicatoscl <img src="img/logores.PNG" align="right" width = "120px"/>
 
 Paquete R para acceder a registro administrativo de sindicatos activos y en receso en Chile (1920-2021)
+
 
 # Instalar y cargar paquete
 
@@ -103,6 +104,40 @@ dim(sindicatos_empresas())
 knitr::kable(head(sindicatos_empresas()[,1:4]))
 ```
 
+## Obtener datos del Servicio de Impuestos Internos
+
+```{r}
+datos <- sii_agregar()
+knitr::kable(
+  dplyr::mutate(
+  as.data.frame(
+    round(
+      prop.table(
+        table(datos$rubro_sii,useNA="ifany")),3)
+    ),Freq=Freq*100
+  )
+)
+```
+
+**Tasa de sindicalización**
+
+Proporción de sindicatos con tasa de sindicalización válida
+
+```{r}
+nrow(datos[datos$tasa_sindicalizacion<=1&!is.na(datos$tasa_sindicalizacion),])/nrow(datos)
+```
+
+Resumen variable tasa de sindicalización
+
+```{r}
+summary(datos[datos$tasa_sindicalizacion<=1,]$tasa_sindicalizacion)
+```
+
+
 # Sobre los datos usados
 
-Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descargarse en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>
+Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r lubridate::today()` y son actualizados el último día de cada mes. 
+
+# Uso de los datos
+
+Los Registros administrativos de la Dirección del Trabajo los hemos utilizado en el [Repositorio de Estadísticas Sindicales](https://repositoriosindical.netlify.app/), para la elaboración de la [**Minuta N°1** Sindicatos en la coyuntura del estallido social y la pandemia (2018-2021)](https://github.com/nicolasrattor/Ventanilla_Sindicatos_DT/raw/main/Minuta1/Minuta1.pdf).

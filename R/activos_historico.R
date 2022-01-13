@@ -7,6 +7,7 @@
 #'
 #'
 #'
+#' @export
 #' @examples
 #' activos_historico(desde=2020,hasta=2021)
 #'
