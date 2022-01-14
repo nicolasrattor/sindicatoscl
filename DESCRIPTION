@@ -2,15 +2,14 @@ Package: sindicatoscl
 Type: Package
 Title: datos de sindicatos activos y en receso en Chile entre 1920 y 2021
 Version: 0.3.0
-Author: 
-    person(given = "Nicolás",
-           family = "Ratto",
+Authors@R:
+  person("Nicolás",
+           "Ratto",
            role = c("aut", "cre"),
            email = "nicolasrattor@gmail.com",
            comment = c(ORCID = "0000-0003-1462-0238"))
 Maintainer: Nicolás Ratto <nicolasrattor@gmail.com>
 Description: datos de sindicatos activos y en receso en Chile entre 1920 y 2021
-License: CC0
 Encoding: UTF-8
 LazyData: true
 Depends: 
@@ -21,3 +20,4 @@ Imports:
     lubridate,
     dplyr,
     stringr
+License: CC BY 4.0
