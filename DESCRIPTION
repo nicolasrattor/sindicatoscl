@@ -21,3 +21,7 @@ Imports:
     dplyr,
     stringr
 License: CC BY 4.0
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
