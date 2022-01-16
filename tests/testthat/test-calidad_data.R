@@ -5,7 +5,7 @@ test_that("multiplication works", {
 # Los 5 primeros test son utilizado por Riva Quiroga en su paquete "guaguas"
 
 test_that("sindicatos nrow matches docs", {
-  expect_equal(25457, nrow(sindicatos))
+  expect_equal(39449, nrow(sindicatos))
 })
 
 test_that("sindicatos years don't go below 1900", {

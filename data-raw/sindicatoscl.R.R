@@ -1,6 +1,6 @@
 
 ## datos de https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx
-sindicatos <- janitor::clean_names(readxl::read_excel("data-raw/archivo_sindicatos_20220111.xlsx"))
+sindicatos <- janitor::clean_names(readxl::read_excel("data-raw/archivo_sindicatos_20220116.xlsx"))
 
 ## Cargar paquetes
 library(readxl)
@@ -50,6 +50,9 @@ sindicatos <- sindicatos %>% rename(estado=glosa,
 
 
 # fecha última directiva no puede ser menor a la de constitución
+
+sindicatos <- sindicatos %>% filter(!is.na(fecha_constitucion))
+
 sindicatos <- sindicatos %>% dplyr::mutate(fecha_ultima_directiva=
                                              dplyr::if_else(fecha_constitucion > fecha_ultima_directiva, NA_character_,
                                                             as.character(fecha_ultima_directiva)),
