@@ -1,0 +1,18 @@
+citHeader("To cite sindicatoscl in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "Datos y funciones para contar {sindicatos} en Chile (1900-2021)",
+  author   = "Nicolás Ratto",
+  journal  = "Revista",
+  year     = "2021",
+  volume   = " ",
+  number   = " ",
+  pages    = " ",
+  url      = " ",
+  textVersion = paste(
+
+  )
+)
+
+

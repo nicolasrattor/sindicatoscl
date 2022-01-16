@@ -1,5 +1,5 @@
 
-# sindicatoscl <img src="img/logores.PNG" align="right" width = "120px"/>
+# sindicatoscl <img src="man/figures/logores.PNG" align="right" width = "120px"/>
 
 Paquete R para acceder a registro administrativo de sindicatos activos y
 en receso en Chile (1920-2021)
@@ -245,7 +245,7 @@ summary(datos[datos$tasa_sindicalizacion<=1,]$tasa_sindicalizacion)
 Registros administrativos de acceso público de la Dirección del Trabajo.
 Disponibles para descarga en:
 <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>.
-Los datos utilizados en el paquete fueron descargados el 2022-01-12 y
+Los datos utilizados en el paquete fueron descargados el 2022-01-16 y
 son actualizados el último día de cada mes.
 
 # Uso de los datos

@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# sindicatoscl <img src="img/logores.PNG" align="right" width = "120px"/>
+# sindicatoscl <img src="man/figures/logores.PNG" align="right" width = "120px"/>
 
 Paquete R para acceder a registro administrativo de sindicatos activos y en receso en Chile (1920-2021)
 
