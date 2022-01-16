@@ -48,6 +48,16 @@ sindicatos <- sindicatos %>% rename(estado=glosa,
   select(-fono,-email,-column1,-fecha_deposito_estatutos) %>%
   mutate(total_socis=socios+socias)
 
+
+# fecha última directiva no puede ser menor a la de constitución
+sindicatos <- sindicatos %>% dplyr::mutate(fecha_ultima_directiva=
+                                             dplyr::if_else(fecha_constitucion > fecha_ultima_directiva, NA_character_,
+                                                            as.character(fecha_ultima_directiva)),
+                                           fecha_ultima_directiva=substr(fecha_ultima_directiva,1,10),
+                                           fecha_ultima_directiva=lubridate::ymd(fecha_ultima_directiva))
+
+table((sindicatos$fecha_constitucion>sindicatos$fecha_ultima_directiva))
+
 # exportar
 #usethis::use_data(sindicatos, internal = TRUE, overwrite = TRUE)
 
@@ -65,7 +75,7 @@ sii$nt_sii <- as.numeric(sii$nt_sii)
 sii <- dplyr::mutate(sii,nt_sii=dplyr::if_else(nt_sii==0,NA_real_,nt_sii))
 
 
-#usethis::use_data(sindicatos,sii, internal = TRUE, overwrite = TRUE)
+usethis::use_data(sindicatos,sii, internal = TRUE, overwrite = TRUE)
 
 
 
@@ -74,7 +84,7 @@ sii <- dplyr::mutate(sii,nt_sii=dplyr::if_else(nt_sii==0,NA_real_,nt_sii))
 #save(sindicatos,file="data/sindicatos.Rdata")
 #save(sii,file="data/sii.Rdata")
 
-usethis::use_data(sindicatos,sii)
+usethis::use_data(sindicatos,sii,overwrite = TRUE)
 
 
 
