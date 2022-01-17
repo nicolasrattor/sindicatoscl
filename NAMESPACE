@@ -2,6 +2,7 @@
 
 export(activos_en)
 export(activos_historico)
+export(afiliados_tipo)
 export(buscar_sindicatos)
 export(constitucion_anual)
 export(empresas_sindicatos_activos)
@@ -11,3 +12,4 @@ export(sindicatos_activos_empresas)
 export(sindicatos_empresas)
 export(sindicatos_independientes)
 export(sindicatos_interempresas)
+export(tasa_sindicalizacion)

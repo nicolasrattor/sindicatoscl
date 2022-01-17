@@ -78,7 +78,7 @@ sii$nt_sii <- as.numeric(sii$nt_sii)
 sii <- dplyr::mutate(sii,nt_sii=dplyr::if_else(nt_sii==0,NA_real_,nt_sii))
 
 
-usethis::use_data(sindicatos,sii, internal = TRUE, overwrite = TRUE)
+#usethis::use_data(sindicatos,sii, internal = TRUE, overwrite = TRUE)
 
 
 
@@ -89,5 +89,32 @@ usethis::use_data(sindicatos,sii, internal = TRUE, overwrite = TRUE)
 
 usethis::use_data(sindicatos,sii,overwrite = TRUE)
 
+
+
+
+#### data ene ####
+
+categoria_ocupacion<-janitor::clean_names(openxlsx::read.xlsx("https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/cuadros-estadisticos/series-de-tiempo-nueva-calibraci%C3%B3n-proyecciones-de-poblaci%C3%B3n-censo-2017/categoria.xlsx?sfvrsn=70dc54db_70",sheet = 2,startRow = 6) )
+nombres<-names(categoria_ocupacion)
+nombres<-nombres[c(1,2,4-1,6-1,8-1,10-1,12-1,14-1,16-1,18-1,20-1,22-1,24-1,26-1)]
+categoria_ocupacion<-openxlsx::read.xlsx("https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/cuadros-estadisticos/series-de-tiempo-nueva-calibraci%C3%B3n-proyecciones-de-poblaci%C3%B3n-censo-2017/categoria.xlsx?sfvrsn=70dc54db_70",sheet = 2,startRow = 7)
+categoria_ocupacion<-categoria_ocupacion[1:(nrow(categoria_ocupacion)-9),c(1,2,4,6,8,10,12,14,16,18,20,22,24,26)]
+names(categoria_ocupacion)<-nombres
+
+categoria_ocupacion<-categoria_ocupacion %>% dplyr::filter(trimestre=="Oct - Dic")
+
+ene<-categoria_ocupacion %>%
+
+  dplyr::mutate(ft_ocupada1=poblacion_ocupada_total*1000,
+
+         ft_ocupada2=(poblacion_ocupada_total-independientes_empleadores_as-
+                        independientes_familiares_no_remunerados-asalariados_as_sector_publico_5)*1000,
+
+         ft_ocupada3=(asalariados_as_sector_privado+ personal_de_servicio_domestico_total_6)*1000) %>%
+
+  dplyr::select(ano, ft_ocupada1, ft_ocupada2 ,ft_ocupada3)
+
+
+usethis::use_data(sindicatos,sii, ene , internal = TRUE, overwrite = TRUE)
 
 
