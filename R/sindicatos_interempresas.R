@@ -1,9 +1,9 @@
 
-#' Filtrar sindicatos según agrupaciones relevantes
+#' Filtra sindicatos dejando solo a los interempresa
 #'
 #'
 #'
-#'
+#' @return Una tibble
 #'
 #'
 #' @export

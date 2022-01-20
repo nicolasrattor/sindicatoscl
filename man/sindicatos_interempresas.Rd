@@ -2,12 +2,15 @@
 % Please edit documentation in R/sindicatos_interempresas.R
 \name{sindicatos_interempresas}
 \alias{sindicatos_interempresas}
-\title{Filtrar sindicatos según agrupaciones relevantes}
+\title{Filtra sindicatos dejando solo a los interempresa}
 \usage{
 sindicatos_interempresas()
 }
+\value{
+Una tibble
+}
 \description{
-Filtrar sindicatos según agrupaciones relevantes
+Filtra sindicatos dejando solo a los interempresa
 }
 \examples{
 sindicatos_activos()

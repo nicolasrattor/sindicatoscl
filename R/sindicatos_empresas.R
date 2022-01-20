@@ -1,10 +1,10 @@
 
-#' Filtrar sindicatos según agrupaciones relevantes
+#' Filtrar sindicatos de empresa o establecimiento.
 #'
 #'
+#' No distingue entre receso y activos
 #'
-#'
-#'
+#' @return Una tibble
 #'
 #' @export
 #'

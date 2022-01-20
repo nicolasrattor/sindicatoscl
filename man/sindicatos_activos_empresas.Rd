@@ -2,12 +2,15 @@
 % Please edit documentation in R/sindicatos_activos.R
 \name{sindicatos_activos_empresas}
 \alias{sindicatos_activos_empresas}
-\title{Filtrar sindicatos según agrupaciones relevantes}
+\title{Filtra sindicatos activos y de empresa o establecimiento}
 \usage{
 sindicatos_activos_empresas()
 }
+\value{
+Una tibble con listado de sindicatos activos y de empresa
+}
 \description{
-Filtrar sindicatos según agrupaciones relevantes
+Filtra sindicatos activos y de empresa o establecimiento
 }
 \examples{
 sindicatos_activos_empresas()

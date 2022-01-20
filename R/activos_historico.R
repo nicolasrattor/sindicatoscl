@@ -1,11 +1,14 @@
 
-#' Cuenta los sindicatos en constitución o activos en cada periodo (año o mes)
+#' Cuenta los sindicatos activos y los afiliados en cada mes en un periodo de años
 #'
 #'
 #'
 #'
+#' @param desde Año desde el cuál partir haciendo el conteo. 2020 por defecto
+#' @param hasta Año hasta el cuál partir haciendo el conteo. 2021 por defecto
 #'
-#'
+#' @return Una tibble con el número de sindicatos y socios en cada mes del periodo
+#' indicado
 #'
 #' @export
 #' @examples

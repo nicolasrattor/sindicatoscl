@@ -6,6 +6,11 @@
 \usage{
 sii_agregar()
 }
+\value{
+Una data frame donde las filas son los sindicatos. Se agrega info
+de sector económico de empresa,
+ventas, número de trabajadores y tasa de sindicalización del sindicato en la empresa
+}
 \description{
 Se filtra la data a los sindicatos activos y de empresa o establecimiento.
 Luego se agregan variables del Servicio de Impuestos Internos relacionadas a

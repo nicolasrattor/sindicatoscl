@@ -6,6 +6,9 @@
 \usage{
 afiliados_tipo()
 }
+\value{
+Una tibble con afiliados a sindicatos según tipo de sindicatos
+}
 \description{
 Imprime el número de afiliados/as a sindicatos según tipo de sindicato desde 1990
 hasta 2020.

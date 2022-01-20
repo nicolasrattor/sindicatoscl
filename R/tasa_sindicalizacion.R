@@ -4,6 +4,7 @@
 #' Imprime el número de afiliados/as a sindicatos según tipo de sindicato desde 1990
 #' hasta 2020.
 #'
+#' @return Una tibble con afiliados a sindicatos según tipo de sindicatos
 #'
 #' @export
 #'
@@ -63,11 +64,14 @@ afiliados_tipo <- function(){
 #'
 #' @param metodo puede "res2 o "dt"
 #'
+#' @return Una tibble con las tasas de sindicalización para el periodo 1990-2020
+#'
 #' @export
 #'
 #' @examples
 #' tasa_sindicalizacion()
-#'
+#' tasa_sindicalizacion(metodo="res")
+#' tasa_sindicalizacion(metodo="dt")
 
 tasa_sindicalizacion <- function(metodo="res"){
 

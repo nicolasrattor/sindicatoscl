@@ -4,7 +4,15 @@
 \alias{activos_en}
 \title{Cuenta los sindicatos en constitución o activos en cada periodo}
 \usage{
-activos_en(ano = 2021, mes = 6)
+activos_en(ano = 2021, mes = 11)
+}
+\arguments{
+\item{ano}{Año en el que se buscan sindicatos activos}
+
+\item{mes}{Mes en el que se buscan sindicatos activos. Por defecto noviembre 2021}
+}
+\value{
+una tibble con los sindicatos activos en el periodo consultado
 }
 \description{
 Cuenta los sindicatos en constitución o activos en cada periodo
@@ -12,5 +20,5 @@ Cuenta los sindicatos en constitución o activos en cada periodo
 \examples{
 
 activos_en(ano=1990,mes=1)
-
+activos_en(ano=1990)
 }

@@ -1,12 +1,14 @@
 
 #' Buscar empresas o sindicatos por palabras claves
 #'
+#' Permite buscar sindicatos, ya sea activos o en receso, en empresas según
+#' el nombre del sindicato y/o de la empresa
 #'
-#'
-#'
+#' @param empresa_buscada cadena de texto con palabra clave
+#' @param sindicato_buscado cadena de texto con palabra clave
+#' @return Una tibble con los sindicatos filtrados
 #'
 #' @export
-#'
 #'
 #' @examples
 #' buscar_sindicatos(empresa_buscada="walmart",sindicato_buscado="lider")

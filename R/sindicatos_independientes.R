@@ -1,10 +1,10 @@
 
-#' Filtrar sindicatos según agrupaciones relevantes
+#' Filtra sindicatos según independientes
 #'
 #'
 #'
 #'
-#'
+#' @return Filtra sindicatos dejando solo a los de empresas independientes
 #'
 #' @export
 #'

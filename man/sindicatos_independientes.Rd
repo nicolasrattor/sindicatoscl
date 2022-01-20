@@ -2,12 +2,15 @@
 % Please edit documentation in R/sindicatos_independientes.R
 \name{sindicatos_independientes}
 \alias{sindicatos_independientes}
-\title{Filtrar sindicatos según agrupaciones relevantes}
+\title{Filtra sindicatos según independientes}
 \usage{
 sindicatos_independientes()
 }
+\value{
+Filtra sindicatos dejando solo a los de empresas independientes
+}
 \description{
-Filtrar sindicatos según agrupaciones relevantes
+Filtra sindicatos según independientes
 }
 \examples{
 sindicatos_activos()

@@ -2,12 +2,16 @@
 % Please edit documentation in R/constitucion_anual.R
 \name{constitucion_anual}
 \alias{constitucion_anual}
-\title{Cuenta los sindicatos en constitución o activos en cada periodo (año o mes)}
+\title{Cuenta los sindicatos que se constituyeron cada año}
 \usage{
 constitucion_anual()
 }
+\value{
+Una tibble con el número de sindicatos y afiliados a sindicatos
+que se constituyeron cada año
+}
 \description{
-Cuenta los sindicatos en constitución o activos en cada periodo (año o mes)
+Cuenta los sindicatos que se constituyeron cada año
 }
 \examples{
 constitucion_anual()

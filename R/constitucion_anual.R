@@ -1,10 +1,10 @@
 
-#' Cuenta los sindicatos en constitución o activos en cada periodo (año o mes)
+#' Cuenta los sindicatos que se constituyeron cada año
 #'
 #'
 #'
-#'
-#'
+#' @return Una tibble con el número de sindicatos y afiliados a sindicatos
+#' que se constituyeron cada año
 #'
 #' @export
 #'

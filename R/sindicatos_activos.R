@@ -1,10 +1,10 @@
 
-#' Filtrar sindicatos según agrupaciones relevantes
+#' Filtra sindicatos activos
 #'
 #'
 #'
 #'
-#'
+#' @return Una tibble con listado de sindicatos activos
 #'
 #' @export
 #'
@@ -17,12 +17,12 @@ sindicatos_activos <- function(){
 }
 
 
-#' Filtrar sindicatos según agrupaciones relevantes
+#' Filtra sindicatos activos y de empresa o establecimiento
 #'
 #'
 #'
 #'
-#'
+#' @return Una tibble con listado de sindicatos activos y de empresa
 #'
 #' @export
 #'

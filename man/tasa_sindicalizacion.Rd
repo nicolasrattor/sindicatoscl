@@ -9,6 +9,9 @@ tasa_sindicalizacion(metodo = "res")
 \arguments{
 \item{metodo}{puede "res2 o "dt"}
 }
+\value{
+Una tibble con las tasas de sindicalización para el periodo 1990-2020
+}
 \description{
 dt = imprime las tasas oficiales de la DT publicada en compendios
 res = imprime las tasas según metodología DT pero con datos de sindicatoscl
@@ -21,5 +24,6 @@ metodologia3 = Población Afiliada (excluye afiliados independientes) / Total de
 }
 \examples{
 tasa_sindicalizacion()
-
+tasa_sindicalizacion(metodo="res")
+tasa_sindicalizacion(metodo="dt")
 }

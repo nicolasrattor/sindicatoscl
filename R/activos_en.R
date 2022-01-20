@@ -3,18 +3,20 @@
 #'
 #'
 #'
+#' @param ano Año en el que se buscan sindicatos activos
+#' @param mes Mes en el que se buscan sindicatos activos. Por defecto noviembre 2021
 #'
-#'
+#' @return una tibble con los sindicatos activos en el periodo consultado
 #'
 #' @export
 #'
 #' @examples
 #'
 #' activos_en(ano=1990,mes=1)
-#'
+#' activos_en(ano=1990)
 
 
-activos_en <- function(ano=2021,mes=6){
+activos_en <- function(ano=2021,mes=11){
 
   fecha<-data.frame(i=1:length(c(rep(1920:2021,each=12))),
                     ano=c(rep(1920:2021,each=12)),

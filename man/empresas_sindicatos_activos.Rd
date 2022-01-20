@@ -6,8 +6,11 @@
 \usage{
 empresas_sindicatos_activos()
 }
+\value{
+Una tibble en la que cada fila es una empresa
+}
 \description{
-Agrupa por empresa e indica N de sindicatos activos y afiliados/as
+Además reporta para cada empresa el tamaño promedio de los sindicatos.
 }
 \examples{
 empresas_sindicatos_activos()

@@ -5,6 +5,9 @@
 #' Luego se agregan variables del Servicio de Impuestos Internos relacionadas a
 #' ventas, número de trabajadores y actividad económica.
 #'
+#' @return Una data frame donde las filas son los sindicatos. Se agrega info
+#' de sector económico de empresa,
+#' ventas, número de trabajadores y tasa de sindicalización del sindicato en la empresa
 #'
 #'
 #' @export

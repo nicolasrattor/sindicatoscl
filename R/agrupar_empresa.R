@@ -1,10 +1,10 @@
 
 #' Agrupa por empresa e indica N de sindicatos activos y afiliados/as
 #'
+#' Además reporta para cada empresa el tamaño promedio de los sindicatos.
 #'
 #'
-#'
-#'
+#' @return Una tibble en la que cada fila es una empresa
 #'
 #' @export
 #'
