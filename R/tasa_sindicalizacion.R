@@ -69,7 +69,6 @@ afiliados_tipo <- function(){
 #' @export
 #'
 #' @examples
-#' tasa_sindicalizacion()
 #' tasa_sindicalizacion(metodo="res")
 #' tasa_sindicalizacion(metodo="dt")
 
