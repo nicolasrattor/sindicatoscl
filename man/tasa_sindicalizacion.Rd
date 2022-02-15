@@ -23,7 +23,6 @@ metodologia3 = Población Afiliada (excluye afiliados independientes) / Total de
 (excluye asalariados s.público)*100
 }
 \examples{
-tasa_sindicalizacion()
 tasa_sindicalizacion(metodo="res")
 tasa_sindicalizacion(metodo="dt")
 }

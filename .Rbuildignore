@@ -3,7 +3,6 @@
 ^LICENSE\.md$
 ^data-raw$
 ^README\.Rmd$
-^.*\.web$
-^_site$
-^index$
-^.*\site_libs$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

@@ -1,18 +1,18 @@
 citHeader("To cite sindicatoscl in publications use:")
 
 citEntry(
-  entry    = "Article",
-  title    = "Datos y funciones para contar {sindicatos} en Chile (1900-2021)",
-  author   = "Nicolás Ratto",
-  journal  = "Revista",
-  year     = "2021",
-  volume   = " ",
-  number   = " ",
-  pages    = " ",
-  url      = " ",
-  textVersion = paste(
+  entry    = "Manual",
+  title    = "sindicatoscl: datos de sindicatos en Chile entre 1920 y 2021",
+  author = "Nicolás Ratto",
+  organization = "Repositorio de Estadísticas Sindicales",
+  address = "Santiago, Chile",
+  year = "2022",
+  url = "http://nicolasrattor.github.io/sindicatoscl/",
+  textVersion = paste("Ratto, N. (2021).", 
+                      "sindicatoscl: datos de sindicatos en",
+                      "Chile entre 1920 y 2021.",
+                      "Repositorio de Estadísticas Sindicales,",
+                      "Santiago, Chile. URL",
+                      "http://nicolasrattor.github.io/sindicatoscl/.")
 
-  )
 )
-
-
