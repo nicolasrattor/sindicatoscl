@@ -70,7 +70,7 @@ table((sindicatos$fecha_constitucion>sindicatos$fecha_ultima_directiva))
 
 #### sii ####
 
-load(file="data-raw/sii.Rdata")
+load(file="data-raw/sii2.Rdata")
 sii$rut_empresa <- sii$rut
 sii$rut <- NULL
 sii$rut_empresa <- as.character(sii$rut_empresa)

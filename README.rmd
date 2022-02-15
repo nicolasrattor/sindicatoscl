@@ -16,6 +16,7 @@ devtools::install_github("nicolasrattor/sindicatoscl")
 
 ```{r}
 library(sindicatoscl)
+library(dplyr)
 ```
 
 
@@ -41,6 +42,19 @@ empresas_sindicatos_activos()
 
 ```{r echo=FALSE}
 head(empresas_sindicatos_activos())
+```
+
+## Indicador de fragmentación sindical
+
+```{r}
+empresas <- empresas_sindicatos_activos()
+summary(empresas$sindicatos)
+
+sectores <- sii_agregar() %>% group_by(rut_empresa) %>% summarise(rubro_sii=first(rubro_sii))
+empresas <- merge(empresas,sectores,by="rut_empresa",all.x = TRUE)
+empresas %>% group_by(rubro_sii) %>% summarise(fragmentacion=mean(sindicatos),
+                                               n=n()) %>% 
+  arrange(-fragmentacion)
 ```
 
 

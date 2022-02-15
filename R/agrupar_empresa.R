@@ -20,7 +20,9 @@ empresas_sindicatos_activos <- function(){
   dplyr::mutate(
     dplyr::filter(dplyr::arrange(dplyr::summarise(dplyr::group_by(empresas,rut_empresa),
                    sindicatos=dplyr::n(),
-                   afiliads=sum(total_socis)),-sindicatos),!is.na(rut_empresa)),
+                   afiliads=sum(total_socis)
+
+                   ),-sindicatos),!is.na(rut_empresa)),
   tamano_promedio=afiliads/sindicatos)
 }
 

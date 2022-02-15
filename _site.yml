@@ -1,0 +1,16 @@
+name: "sindicatoscl"
+output_dir: "."
+navbar:
+  title: "sindicatoscl"
+  left:
+  - text: "Comenzar"
+    href: web/paper.html
+  - text: "Referencias"
+    href: web/paper.html
+  - text: "Articulos"
+    href: web/paper.html
+  - text: "Changelog"
+    href: web/paper.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/nicolasrattor/sindicatoscl
