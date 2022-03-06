@@ -1,0 +1,24 @@
+---
+title: "Sindicalismo en empresas particulares"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{empresas}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(sindicatoscl)
+```
+
+```{r}
+tasa_sindicalizacion("dt")
+```
+

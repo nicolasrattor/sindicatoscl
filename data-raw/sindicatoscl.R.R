@@ -64,8 +64,10 @@ table((sindicatos$fecha_constitucion>sindicatos$fecha_ultima_directiva))
 # exportar
 #usethis::use_data(sindicatos, internal = TRUE, overwrite = TRUE)
 
+## Quitar sindicatos con fecha de constitución antes de 1920
 
-
+antes1920 <- sindicatos %>% filter(fecha_constitucion<ymd("1920-01-01"))
+sindicatos <- sindicatos %>% filter(fecha_constitucion>=ymd("1920-01-01"))
 
 
 #### sii ####

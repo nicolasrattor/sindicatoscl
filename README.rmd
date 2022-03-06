@@ -4,8 +4,7 @@ output: github_document
 
 # sindicatoscl <img src="man/figures/logores.PNG" align="right" width = "120px"/>
 
-Paquete R para acceder a registro administrativo de sindicatos activos y en receso en Chile (1920-2021)
-
+Paquete R para acceder a microdato de sindicatos activos y en receso en Chile, proveniente de registro administrativo de la Dirección del Trabajo. Se consideran sindicatos del tipo empresa, interempresa, de independientes, de establecimiento y transitorios, de todos los sectores económicos. Los datos abarcan el periodo 1920-2021 y contienen más de 30.000 observaciones (cada una es un sindicato). 
 
 # Instalar y cargar paquete
 

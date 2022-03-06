@@ -5,11 +5,11 @@ test_that("multiplication works", {
 # Los 5 primeros test son utilizado por Riva Quiroga en su paquete "guaguas"
 
 test_that("sindicatos nrow matches docs", {
-  expect_equal(39449, nrow(sindicatos))
+  expect_equal(39439, nrow(sindicatos))
 })
 
-test_that("sindicatos years don't go below 1900", {
-  anio_inicio <- 1900
+test_that("sindicatos years don't go below 1920", {
+  anio_inicio <- 1920
   min_anio <- min(lubridate::year(sindicatos$fecha_constitucion))
   expect_equal(anio_inicio, min_anio)
 })
