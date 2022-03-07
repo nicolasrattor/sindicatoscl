@@ -1,12 +1,15 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 # sindicatoscl <img src="man/figures/logores.PNG" align="right" width = "120px"/>
 
-Paquete R para acceder a microdato de sindicatos activos y en receso en Chile, proveniente de registro administrativo de la Dirección del Trabajo. Se consideran sindicatos del tipo empresa, interempresa, de independientes, de establecimiento y transitorios, de todos los sectores económicos. Los datos abarcan el periodo 1920-2021 y contienen más de 30.000 observaciones (cada una es un sindicato). 
+Paquete R para acceder a microdato de sindicatos activos y en receso en Chile, proveniente de registro administrativo de la Dirección del Trabajo.
 
 # Instalar y cargar paquete
+
+El paquete no se encuentra en la CRAN ni ha sido enviado, por lo que debe instalarse la versión en desarrollo desde GitHub.
 
 ```{r eval=FALSE}
 install.packages("devtools")
@@ -15,65 +18,138 @@ devtools::install_github("nicolasrattor/sindicatoscl")
 
 ```{r}
 library(sindicatoscl)
+```
+
+Además, se cargan otros paquetes para la manipulación de datos:
+
+```{r warning=FALSE, message=FALSE}
 library(dplyr)
+library(ggplot2)
+library(hrbrthemes)
 ```
 
 
 # Uso del paquete
 
-## Obtener el registro en bruto
+## Obtener microdatos de sindicatos
+
+El objetivo principal del paquete es disponer de una *dataframe* con el listado de todos los sindicatos activos y en receso en Chile y, sus principales características.
+
+El *dataframe* `sindicatos` contiene `r nrow(sindicatos)` observaciones para `r ncol(sindicatos)` variables:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+data_frame(variables=names(sindicatos),
+           descripción=c("Región de la dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa (16 regiones)",
+                        "Identificador del sindicato",
+                        "Nombre del sindicato",
+                        "Estado del sindicato: ACTIVO, RECESO, DISUELTO, CADUCADO O ELIMINADO",
+                        "Tipo de sindicato: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER EMPRESA o TRANSITORIO",
+                        "Dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa",
+                        "Número de socios de sindicato registrados en último trámite",
+                        "Número de socias de sindicato registrados en último trámite",
+                        "Fecha de constitución del sindicato",
+                        "Fecha de elección de directiva. Se usa como proxy de último trámite",
+                        "Nombre oficina de Inspección del Trabajo en que se hizo la constitución del sindicato",
+                        "Nombre de la empresa",
+                        "Rut de la empresa o de todas las empresas en las que existe el sindicato (caso interempresas)",
+                        "Clasificador de Actividad Económica de la empresa",
+                        "Número de socios y socias de sindicato registrados en último trámite"
+                         )) %>% 
+  knitr::kable()  %>% 
+  kableExtra::column_spec(1:2, width = "10cm")
+             
+```
+
+Acá las primeras 5 filas y columnas de `sindicatos`
 
 ```{r eval=FALSE}
 sindicatos
 ```
 
 ```{r echo=FALSE}
-dim(sindicatos)
 knitr::kable(head(sindicatos[,1:4]))
-names(sindicatos[,5:ncol(sindicatos)])
 ```
 
-## Agrupar por empresa
+## Pasar la data al nivel empresa
 
-```{r eval=FALSE}
-empresas_sindicatos_activos()
-```
-
-```{r echo=FALSE}
-head(empresas_sindicatos_activos())
-```
-
-## Indicador de fragmentación sindical
+En vez de colocar el foco en los sindicatos, puede ser de interés centrarse en las empresas con sindicatos y sus características. Para eso, hay que crear un nuevo conjunto de datos con la función `empresas_sindicatos_activos()`, la que mantiene solo a los sindicatos activos y del nivel empresa o establecimiento, y agrupa los datos por empresa.
 
 ```{r}
 empresas <- empresas_sindicatos_activos()
-summary(empresas$sindicatos)
-
-sectores <- sii_agregar() %>% group_by(rut_empresa) %>% summarise(rubro_sii=first(rubro_sii))
-empresas <- merge(empresas,sectores,by="rut_empresa",all.x = TRUE)
-empresas %>% group_by(rubro_sii) %>% summarise(fragmentacion=mean(sindicatos),
-                                               n=n()) %>% 
-  arrange(-fragmentacion)
 ```
+
+El número de observaciones de la data resultante es igual al número de empresas con sindicatos activos en Chile (`r nrow(empresas)`). La nueva data además agrega el número de sindicatos existentes en cada empresa, el total de afiliados y el tamaño promedio de los sindicatos en cada empresa. El rut de la empresa es el rut real, por lo que la información puede vincularse a otras fuentes de datos de empresas. 
+
+```{r echo=FALSE}
+head(empresas) %>% knitr::kable()
+```
+
+Con estos datos se puede construir un indicador simple de *fragmentación sindical*: en promedio existen 1,53 sindicatos por empresa y en más del 75% de las empresas con sindicato solamente existe un sindicato. 
+
+```{r}
+summary(empresas$sindicatos)
+```
+
+Este indicador se puede obtener para cada sector económico utilizando los datos del Servicio de Impuestos Internos (ver viñeta [SII](https://nicolasrattor.github.io/sindicatoscl/articles/sii.html))
 
 
 ## Serie histórica sindicatos constituidos
 
-```{r}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 serie <- constitucion_anual()
 plot(serie$ano,serie$sindicatos,type = "l")
+
+serie %>% 
+  ggplot(aes(ano, sindicatos)) + 
+  geom_line() +
+  labs(x = "año", y = "sindicatos",
+       title = "Número de sindicatos constituidos cada año") +
+  theme_ipsum()
 ```
 
+```{r echo=FALSE, eval=FALSE}
+ggsave(
+  plot = last_plot(),
+  filename = "man/figures/constituidos.png",
+  device = "png",
+  dpi = "retina",
+  units = "cm",
+  width = 33,
+  height = 20
+)
+```
+
+<img src="man/figures/constituidos.png">
 
 ## Serie histórica activos
 
-```{r}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 serie <- activos_historico(desde=2020,hasta=2021)
 serie$fecha <- lubridate::make_date(year=serie$ano,month=serie$mes)
 plot(serie$fecha,serie$sindicatos,type = "l")
+
+serie %>% 
+  ggplot(aes(fecha, sindicatos)) + 
+  geom_line() +
+  labs(x = "año", y = "sindicatos",
+       title = "Número de sindicatos activos cada mes desde 2020") +
+  theme_ipsum()
 ```
 
 
+```{r echo=FALSE, eval=FALSE}
+ggsave(
+  plot = last_plot(),
+  filename = "man/figures/activos.png",
+  device = "png",
+  dpi = "retina",
+  units = "cm",
+  width = 33,
+  height = 20
+)
+```
+
+<img src="man/figures/activos.png">
 
 ## Consultar sindicatos activos por fecha
 
@@ -81,8 +157,6 @@ plot(serie$fecha,serie$sindicatos,type = "l")
 nrow(activos_en(ano=1990,mes=1))
 head(activos_en(ano=1990,mes=1)[,c(1:4)])
 ```
-
-
 
 ## Consultar por nombre sindicato o empresa
 
@@ -93,63 +167,9 @@ buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3
 ```
 
 
-
-## Obtener solo a los sindicatos activos (en 2021)
-
-```{r eval=FALSE}
-sindicatos_activos()
-```
-
-```{r echo=FALSE}
-dim(sindicatos_activos())
-knitr::kable(head(sindicatos_activos()[,1:4]))
-```
-
-
-## Obtener solo a los sindicatos de empresa
-
-```{r eval=FALSE}
-sindicatos_empresas()
-```
-
-```{r echo=FALSE}
-dim(sindicatos_empresas())
-knitr::kable(head(sindicatos_empresas()[,1:4]))
-```
-
-## Obtener datos del Servicio de Impuestos Internos
-
-```{r}
-datos <- sii_agregar()
-knitr::kable(
-  dplyr::mutate(
-  as.data.frame(
-    round(
-      prop.table(
-        table(datos$rubro_sii,useNA="ifany")),3)
-    ),Freq=Freq*100
-  )
-)
-```
-
-**Tasa de sindicalización**
-
-Proporción de sindicatos con tasa de sindicalización válida
-
-```{r}
-nrow(datos[datos$tasa_sindicalizacion<=1&!is.na(datos$tasa_sindicalizacion),])/nrow(datos)
-```
-
-Resumen variable tasa de sindicalización
-
-```{r}
-summary(datos[datos$tasa_sindicalizacion<=1,]$tasa_sindicalizacion)
-```
-
-
 # Sobre los datos usados
 
-Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r lubridate::today()` y son actualizados el último día de cada mes. 
+Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r "16 de enero de 2022"`. 
 
 # Uso de los datos
 

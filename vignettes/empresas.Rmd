@@ -18,7 +18,11 @@ knitr::opts_chunk$set(
 library(sindicatoscl)
 ```
 
+## Consultar por nombre sindicato o empresa
+
 ```{r}
-tasa_sindicalizacion("dt")
+buscar_sindicatos(empresa_buscada="walmart",sindicato_buscado="lider")[,c(2,3)]
+buscar_sindicatos(empresa_buscada="codelco",sindicato_buscado="")[,c(2,3)]
+buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3)]
 ```
 

@@ -1,0 +1,83 @@
+---
+title: "Servicio de Impuestos Internos (SII)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sii}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message=FALSE, warning=FALSE}
+library(sindicatoscl)
+library(magrittr)
+library(dplyr)
+```
+
+El paquete además dispone una `dataframe` con información de empresas correspondiente al Servicio de Impuestos Internos (SII) de Chile. Este dato permite tener el número de trabajadores y rubro de actividad de cada empresa en la que hay sindicatos.
+
+```{r}
+head(sii) %>% knitr::kable()
+names(sii)
+```
+
+## Agregar datos del Servicio de Impuestos Internos
+
+Se puede hacer a mano u ocupar una función para agrega la información de empresas a la data de sindicatos. 
+
+```{r}
+datos <- sii_agregar()
+head(datos) %>% knitr::kable()
+names(datos)
+```
+
+Así se distribuyen por sector económico los sindicatos
+
+```{r}
+
+knitr::kable(
+  dplyr::mutate(
+  as.data.frame(
+    round(
+      prop.table(
+        table(datos$rubro_sii,useNA="ifany")),3)
+    ),Freq=Freq*100
+  )
+)
+```
+
+## Tasa sindicalización para cada empresa
+
+tasa sindicalización = total_socis / nt_sii
+
+Proporción de sindicatos con tasa de sindicalización válida
+
+```{r}
+nrow(datos[datos$tasa_sindicalizacion<=1&!is.na(datos$tasa_sindicalizacion),])/nrow(datos)
+```
+
+Resumen variable tasa de sindicalización
+
+```{r}
+summary(datos[datos$tasa_sindicalizacion<=1,]$tasa_sindicalizacion)
+```
+
+
+## Indicador de fragmentación sindical por sector económico
+
+```{r}
+empresas <- empresas_sindicatos_activos()
+summary(empresas$sindicatos)
+
+sectores <- sii_agregar() %>% group_by(rut_empresa) %>% summarise(rubro_sii=first(rubro_sii))
+empresas <- merge(empresas,sectores,by="rut_empresa",all.x = TRUE)
+empresas %>% group_by(rubro_sii) %>% summarise(fragmentacion=mean(sindicatos),
+                                               n=n()) %>% 
+  arrange(-fragmentacion)
+```
