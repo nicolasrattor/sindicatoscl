@@ -46,7 +46,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -84,8 +84,7 @@
 
       
 
-      </header><script src="sindicatoscl_files/kePrint-0.0.1/kePrint.js"></script><link href="sindicatoscl_files/lightable-0.0.1/lightable.css" rel="stylesheet">
-<div class="row">
+      </header><script src="sindicatoscl_files/kePrint-0.0.1/kePrint.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>sindicatoscl</h1>
@@ -101,16 +100,17 @@
 <div class="section level2">
 <h2 id="instalar-y-cargar-paquete">Instalar y cargar paquete<a class="anchor" aria-label="anchor" href="#instalar-y-cargar-paquete"></a>
 </h2>
-<p>El paquete no se encuentra en la CRAN ni ha sido enviado, por lo que debe instalarse la versión en desarrollo desde GitHub.</p>
+<p>El paquete no se encuentra en la CRAN ni ha sido enviado, por lo que
+debe instalarse la versión en desarrollo desde GitHub.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools") # instalar paquete sólo si no está instalado</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"nicolasrattor/sindicatoscl"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools") # instalar paquete sÃ³lo si no estÃ¡ instalado</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"nicolasrattor/sindicatoscl"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nicolasrattor/sindicatoscl" class="external-link">sindicatoscl</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nicolasrattor/sindicatoscl" class="external-link">sindicatoscl</a></span><span class="op">)</span></span></code></pre></div>
 <p>Además, se cargan otros paquetes para la manipulación de datos:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usos-básicos">Usos básicos<a class="anchor" aria-label="anchor" href="#usos-b%C3%A1sicos"></a>
@@ -118,8 +118,11 @@
 <div class="section level3">
 <h3 id="obtener-microdatos-de-sindicatos">Obtener microdatos de sindicatos<a class="anchor" aria-label="anchor" href="#obtener-microdatos-de-sindicatos"></a>
 </h3>
-<p>El objetivo principal del paquete es disponer de una <em>dataframe</em> con el listado de todos los sindicatos activos y en receso en Chile y, sus principales características.</p>
-<p>El <em>dataframe</em> <code>sindicatos</code> contiene 39439 observaciones para 15 variables:</p>
+<p>El objetivo principal del paquete es disponer de una
+<em>dataframe</em> con el listado de todos los sindicatos activos y en
+receso en Chile y, sus principales características.</p>
+<p>El <em>dataframe</em> <code>sindicatos</code> contiene 39777
+observaciones para 15 variables:</p>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -135,7 +138,8 @@ descripción
 region
 </td>
 <td style="text-align:left;width: 10cm; ">
-Región de la dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa (16 regiones)
+Región de la dirección a la que se asocia el sindicato. Suele ser la de
+la casa matriz de la empresa (16 regiones)
 </td>
 </tr>
 <tr>
@@ -167,7 +171,8 @@ Estado del sindicato: ACTIVO, RECESO, DISUELTO, CADUCADO O ELIMINADO
 tipo
 </td>
 <td style="text-align:left;width: 10cm; ">
-Tipo de sindicato: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER EMPRESA o TRANSITORIO
+Tipo de sindicato: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER
+EMPRESA o TRANSITORIO
 </td>
 </tr>
 <tr>
@@ -175,7 +180,8 @@ Tipo de sindicato: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER EMPRESA o TRAN
 direccion
 </td>
 <td style="text-align:left;width: 10cm; ">
-Dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa
+Dirección a la que se asocia el sindicato. Suele ser la de la casa
+matriz de la empresa
 </td>
 </tr>
 <tr>
@@ -215,7 +221,8 @@ Fecha de elección de directiva. Se usa como proxy de último trámite
 nombre_oficina
 </td>
 <td style="text-align:left;width: 10cm; ">
-Nombre oficina de Inspección del Trabajo en que se hizo la constitución del sindicato
+Nombre oficina de Inspección del Trabajo en que se hizo la constitución
+del sindicato
 </td>
 </tr>
 <tr>
@@ -231,7 +238,8 @@ Nombre de la empresa
 rut_empresa
 </td>
 <td style="text-align:left;width: 10cm; ">
-Rut de la empresa o de todas las empresas en las que existe el sindicato (caso interempresas)
+Rut de la empresa o de todas las empresas en las que existe el sindicato
+(caso interempresas)
 </td>
 </tr>
 <tr>
@@ -254,7 +262,7 @@ Número de socios y socias de sindicato registrados en último trámite
 </table>
 <p>Acá las primeras 5 filas y columnas de <code>sindicatos</code></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">sindicatos</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">sindicatos</span></span></code></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:right;">
@@ -290,6 +298,20 @@ RECESO
 8
 </td>
 <td style="text-align:right;">
+8050713
+</td>
+<td style="text-align:left;">
+SINDICATO INTEREMPRESAS RAS
+</td>
+<td style="text-align:left;">
+ACTIVO
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
 8010556
 </td>
 <td style="text-align:left;">
@@ -307,7 +329,8 @@ RECESO
 13014833
 </td>
 <td style="text-align:left;">
-SINDICATO INTEREMPRESA NACIONAL DE TRABAJADORES SUBCONTRATADOS DE SERVICIOS Y ACTIVIDADES ANEXOS
+SINDICATO INTEREMPRESA NACIONAL DE TRABAJADORES SUBCONTRATADOS DE
+SERVICIOS Y ACTIVIDADES ANEXOS
 </td>
 <td style="text-align:left;">
 ACTIVO
@@ -335,21 +358,8 @@ RECESO
 13110102
 </td>
 <td style="text-align:left;">
-SINDICATO N° 3 INTEREMPRESA DE TRABAJADORES DE LAS INDUSTRIAS DEL PAN Y DE LA ALIMENTACIÓN.
-</td>
-<td style="text-align:left;">
-ACTIVO
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-10010761
-</td>
-<td style="text-align:left;">
-SINDICATO DE EMPRESA “SEGURIDAD KAPPES”
+SINDICATO N° 3 INTEREMPRESA DE TRABAJADORES DE LAS INDUSTRIAS DEL PAN Y
+DE LA ALIMENTACIÓN.
 </td>
 <td style="text-align:left;">
 ACTIVO
@@ -361,27 +371,42 @@ ACTIVO
 <div class="section level3">
 <h3 id="obtener-sub-poblaciones-de-sindicatos">Obtener sub poblaciones de sindicatos<a class="anchor" aria-label="anchor" href="#obtener-sub-poblaciones-de-sindicatos"></a>
 </h3>
-<p>Además se puede necesitar obtener rápidamente solamente a los sindicatos interempresa, solo a los del tipo empresa, solo a los de independientes o solo a los sindicatos activos.</p>
-<p>Para eso llamar a las siguientes funciones y guardar en nuevo objeto</p>
+<p>Además se puede necesitar obtener rápidamente solamente a los
+sindicatos interempresa, solo a los del tipo empresa, solo a los de
+independientes o solo a los sindicatos activos.</p>
+<p>Para eso llamar a las siguientes funciones y guardar en nuevo
+objeto</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_empresas.html">sindicatos_empresas</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">data3</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_independientes.html">sindicatos_independientes</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">data4</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_interempresas.html">sindicatos_interempresas</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">data5</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_activos.html">sindicatos_activos</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>Desde cada nuevo objeto se pueden hacer otras operaciones, como sumar el total de socios y socias de sindicatos activos, o contar el número de sindicatos activos.</p>
+<code class="sourceCode R"><span><span class="va">data2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_empresas.html">sindicatos_empresas</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">data3</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_independientes.html">sindicatos_independientes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">data4</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_interempresas.html">sindicatos_interempresas</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">data5</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sindicatos_activos.html">sindicatos_activos</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Desde cada nuevo objeto se pueden hacer otras operaciones, como sumar
+el total de socios y socias de sindicatos activos, o contar el número de
+sindicatos activos.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">data5</span><span class="op">$</span><span class="va">total_socis</span><span class="op">)</span>
-<span class="co">#&gt; [1] 1201731</span>
-<span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">data5</span><span class="op">)</span>
-<span class="co">#&gt; [1] 11736</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">data5</span><span class="op">$</span><span class="va">total_socis</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1185940</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">data5</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 11122</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="pasar-la-data-al-nivel-empresa">Pasar la data al nivel empresa<a class="anchor" aria-label="anchor" href="#pasar-la-data-al-nivel-empresa"></a>
 </h3>
-<p>En vez de colocar el foco en los sindicatos, puede ser de interés centrarse en las empresas con sindicatos y sus características. Para eso, hay que crear un nuevo conjunto de datos con la función <code><a href="../reference/empresas_sindicatos_activos.html">empresas_sindicatos_activos()</a></code>, la que mantiene solo a los sindicatos activos y del nivel empresa o establecimiento, y agrupa los datos por empresa.</p>
+<p>En vez de colocar el foco en los sindicatos, puede ser de interés
+centrarse en las empresas con sindicatos y sus características. Para
+eso, hay que crear un nuevo conjunto de datos con la función
+<code><a href="../reference/empresas_sindicatos_activos.html">empresas_sindicatos_activos()</a></code>, la que mantiene solo a los
+sindicatos activos y del nivel empresa o establecimiento, y agrupa los
+datos por empresa.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">empresas</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/empresas_sindicatos_activos.html">empresas_sindicatos_activos</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>El número de observaciones de la data resultante es igual al número de empresas con sindicatos activos en Chile (4781). La nueva data además agrega el número de sindicatos existentes en cada empresa, el total de afiliados y el tamaño promedio de los sindicatos en cada empresa. El rut de la empresa es el rut real, por lo que la información puede vincularse a otras fuentes de datos de empresas.</p>
+<code class="sourceCode R"><span><span class="va">empresas</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/empresas_sindicatos_activos.html">empresas_sindicatos_activos</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>El número de observaciones de la data resultante es igual al número
+de empresas con sindicatos activos en Chile (4571). La nueva data además
+agrega el número de sindicatos existentes en cada empresa, el total de
+afiliados y el tamaño promedio de los sindicatos en cada empresa. El rut
+de la empresa es el rut real, por lo que la información puede vincularse
+a otras fuentes de datos de empresas.</p>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -403,13 +428,13 @@ tamano_promedio
 81537600
 </td>
 <td style="text-align:right;">
-72
+73
 </td>
 <td style="text-align:right;">
-9755
+9626
 </td>
 <td style="text-align:right;">
-135.48611
+131.86301
 </td>
 </tr>
 <tr>
@@ -417,13 +442,13 @@ tamano_promedio
 76134941
 </td>
 <td style="text-align:right;">
-48
+49
 </td>
 <td style="text-align:right;">
-9229
+9212
 </td>
 <td style="text-align:right;">
-192.27083
+188.00000
 </td>
 </tr>
 <tr>
@@ -434,10 +459,10 @@ tamano_promedio
 46
 </td>
 <td style="text-align:right;">
-6462
+6426
 </td>
 <td style="text-align:right;">
-140.47826
+139.69565
 </td>
 </tr>
 <tr>
@@ -445,13 +470,13 @@ tamano_promedio
 76879810
 </td>
 <td style="text-align:right;">
-35
+33
 </td>
 <td style="text-align:right;">
-4480
+3942
 </td>
 <td style="text-align:right;">
-128.00000
+119.45455
 </td>
 </tr>
 <tr>
@@ -459,13 +484,13 @@ tamano_promedio
 61704000
 </td>
 <td style="text-align:right;">
-30
+31
 </td>
 <td style="text-align:right;">
-13770
+13808
 </td>
 <td style="text-align:right;">
-459.00000
+445.41935
 </td>
 </tr>
 <tr>
@@ -473,22 +498,25 @@ tamano_promedio
 83150900
 </td>
 <td style="text-align:right;">
-26
+29
 </td>
 <td style="text-align:right;">
-836
+839
 </td>
 <td style="text-align:right;">
-32.15385
+28.93103
 </td>
 </tr>
 </tbody>
 </table>
-<p>Con estos datos se puede construir un indicador simple de <em>fragmentación sindical</em>: en promedio existen 1,53 sindicatos por empresa y en más del 75% de las empresas con sindicato solamente existe un sindicato.</p>
+<p>Con estos datos se puede construir un indicador simple de
+<em>fragmentación sindical</em>: en promedio existen 1,53 sindicatos por
+empresa y en más del 75% de las empresas con sindicato solamente existe
+un sindicato.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">empresas</span><span class="op">$</span><span class="va">sindicatos</span><span class="op">)</span>
-<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
-<span class="co">#&gt;   1.000   1.000   1.000   1.534   1.000  72.000</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">empresas</span><span class="op">$</span><span class="va">sindicatos</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span></span>
+<span><span class="co">#&gt;   1.000   1.000   1.000   1.535   1.000  73.000</span></span></code></pre></div>
 </div>
 </div>
   </div>
@@ -510,7 +538,7 @@ tamano_promedio
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer>

@@ -30,7 +30,7 @@ res = imprime las tasas según metodología DT pero con datos de sindicatoscl"><
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -74,17 +74,20 @@ res = imprime las tasas según metodología DT pero con datos de sindicatoscl</p
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">tasa_sindicalizacion</span><span class="op">(</span>metodo <span class="op">=</span> <span class="st">"res"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">tasa_sindicalizacion</span><span class="op">(</span>metodo <span class="op">=</span> <span class="st">"res"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>metodo</dt>
 <dd><p>puede "res2 o "dt"</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Una tibble con las tasas de sindicalización para el periodo 1990-2020</p>
+    
+
+<p>Una tibble con las tasas de sindicalización para el periodo 1990-2020</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -96,21 +99,21 @@ metodologia3 = Población Afiliada (excluye afiliados independientes) / Total de
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tasa_sindicalizacion</span><span class="op">(</span>metodo<span class="op">=</span><span class="st">"res"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">tasa_sindicalizacion</span><span class="op">(</span>metodo<span class="op">=</span><span class="st">"res"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ano     tasa1     tasa2     tasa3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2010 0.1337454 0.1594235 0.1811469</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2011 0.1350770 0.1612004 0.1806529</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2012 0.1375188 0.1643817 0.1841677</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2013 0.1386255 0.1661636 0.1883668</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2014 0.1411204 0.1692892 0.1933889</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2015 0.1427778 0.1701751 0.1950624</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2016 0.1437901 0.1713369 0.1985764</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2017 0.1415760 0.1708621 0.2003893</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2018 0.1425779 0.1730352 0.2030534</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2019 0.1394875 0.1688388 0.1995323</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020 0.1577127 0.1924930 0.2258092</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2021 0.1457390 0.1753417 0.2097283</span>
-<span class="r-in"><span class="fu">tasa_sindicalizacion</span><span class="op">(</span>metodo<span class="op">=</span><span class="st">"dt"</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2010 0.1349180 0.1608212 0.1829448</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2011 0.1361499 0.1624808 0.1823828</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2012 0.1389226 0.1660597 0.1865475</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2013 0.1400315 0.1678489 0.1907529</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2014 0.1424036 0.1708285 0.1956004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2015 0.1440889 0.1717379 0.1972607</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2016 0.1452420 0.1730669 0.2009048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2017 0.1430667 0.1726611 0.2028103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2018 0.1447691 0.1756944 0.2064531</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2019 0.1419816 0.1718578 0.2032317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020 0.1607867 0.1962449 0.2302172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2021 0.1493325 0.1796651 0.2147189</span>
+<span class="r-in"><span><span class="fu">tasa_sindicalizacion</span><span class="op">(</span>metodo<span class="op">=</span><span class="st">"dt"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ano tasa_sind1 tasa_sind2 tasa_sind3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  1990       13.4       16.2       19.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  1991       15.1       18.2       21.2</span>
@@ -156,7 +159,7 @@ metodologia3 = Población Afiliada (excluye afiliados independientes) / Total de
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

@@ -46,7 +46,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -98,47 +98,47 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nicolasrattor/sindicatoscl" class="external-link">sindicatoscl</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nicolasrattor/sindicatoscl" class="external-link">sindicatoscl</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="consultar-por-nombre-sindicato-o-empresa">Consultar por nombre sindicato o empresa<a class="anchor" aria-label="anchor" href="#consultar-por-nombre-sindicato-o-empresa"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/buscar_sindicatos.html">buscar_sindicatos</a></span><span class="op">(</span>empresa_buscada<span class="op">=</span><span class="st">"walmart"</span>,sindicato_buscado<span class="op">=</span><span class="st">"lider"</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 32 x 2</span></span>
-<span class="co">#&gt;     rsu_raf nombre                                                              </span>
-<span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                               </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>  5<span style="text-decoration: underline;">010</span>677 <span style="color: #949494;">"</span>sindicato de empresa hipermercado valparaiso ltda. \" lider valpar~</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 15<span style="text-decoration: underline;">010</span>407 <span style="color: #949494;">"</span>sindicato nº1 de empresa supermercado lider de arica<span style="color: #949494;">"</span>              </span> 
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 14<span style="text-decoration: underline;">010</span>513 <span style="color: #949494;">"</span>sindicato de empresa lider valdivia<span style="color: #949494;">"</span>                               </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>  8<span style="text-decoration: underline;">050</span>451 <span style="color: #949494;">"</span>sindicato nº 2 lider bio bio- sl2bb<span style="color: #949494;">"</span>                               </span> 
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 14<span style="text-decoration: underline;">010</span>540 <span style="color: #949494;">"</span>sindicato nº 3 empresa lider valdivia<span style="color: #949494;">"</span>                             </span> 
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 13<span style="text-decoration: underline;">090</span>925 <span style="color: #949494;">"</span>sindicato de empresa lider supermercado maipu ltda<span style="color: #949494;">"</span>                </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 13<span style="text-decoration: underline;">130</span>990 <span style="color: #949494;">"</span>sindicato empresa lider velasquez oeste<span style="color: #949494;">"</span>                           </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 13<span style="text-decoration: underline;">090</span>970 <span style="color: #949494;">"</span>sindicato unificado lider lonquen ltda.<span style="color: #949494;">"</span>                           </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 12<span style="text-decoration: underline;">010</span>284 <span style="color: #949494;">"</span>sindicato hiper lider punta arenas<span style="color: #949494;">"</span>                                </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span>  5<span style="text-decoration: underline;">011</span>066 <span style="color: #949494;">"</span>sindicato interempresa de trabajadores de supermercados lider, val~</span>
-<span class="co">#&gt; <span style="color: #949494;"># ... with 22 more rows</span></span>
-<span class="fu"><a href="../reference/buscar_sindicatos.html">buscar_sindicatos</a></span><span class="op">(</span>empresa_buscada<span class="op">=</span><span class="st">"codelco"</span>,sindicato_buscado<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 52 x 2</span></span>
-<span class="co">#&gt;    rsu_raf nombre                                                               </span>
-<span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 6<span style="text-decoration: underline;">010</span>813 <span style="color: #949494;">"</span>sindicato interempresa \"sintrauni\"<span style="color: #949494;">"</span>                               </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 6<span style="text-decoration: underline;">010</span>918 <span style="color: #949494;">"</span>sindicato nacional de trabajadores de mantención, minería, montajes~</span>s~
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 6<span style="text-decoration: underline;">010</span>025 <span style="color: #949494;">"</span>sindicato de trabajadores sewell y mina nº8, de la empresa codelco ~</span>~
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 6<span style="text-decoration: underline;">010</span>026 <span style="color: #949494;">"</span>sindicato profesional sewell y mina<span style="color: #949494;">"</span>                                </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2<span style="text-decoration: underline;">020</span>002 <span style="color: #949494;">"</span>sindicato de trabajadores nº 1 chuquicamata, codelco chile<span style="color: #949494;">"</span>         </span> 
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2<span style="text-decoration: underline;">020</span>009 <span style="color: #949494;">"</span>sindicato de trabajadores nº 2 de la division chuquicamata de codel~</span>~
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2<span style="text-decoration: underline;">020</span>036 <span style="color: #949494;">"</span>sindicato de trabajadores nº 3 de empresa codelco-chile, division c~</span>~
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2<span style="text-decoration: underline;">020</span>041 <span style="color: #949494;">"</span>sindicato de trabajadores supervisores rol-a de la empresa codelco ~</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2<span style="text-decoration: underline;">020</span>053 <span style="color: #949494;">"</span>sindicato de trabajadores de empresa nº 5, de codelco chile<span style="color: #949494;">"</span>        </span> 
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2<span style="text-decoration: underline;">020</span>125 <span style="color: #949494;">"</span>sindicato de trabajadores radomiro tomic de la division codelco nor~</span>
-<span class="co">#&gt; <span style="color: #949494;"># ... with 42 more rows</span></span>
-<span class="fu"><a href="../reference/buscar_sindicatos.html">buscar_sindicatos</a></span><span class="op">(</span>empresa_buscada<span class="op">=</span><span class="st">""</span>,sindicato_buscado<span class="op">=</span><span class="st">"casa particular"</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 x 2</span></span>
-<span class="co">#&gt;    rsu_raf nombre                                                               </span>
-<span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 12<span style="text-decoration: underline;">010</span>227 sindicato interempresa de trabajadoras y trabajadores de casa partic~</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 13<span style="text-decoration: underline;">014</span>061 sindicato nacional interempresa de trabajadores inmigrantes de casa ~</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/buscar_sindicatos.html">buscar_sindicatos</a></span><span class="op">(</span>empresa_buscada<span class="op">=</span><span class="st">"walmart"</span>,sindicato_buscado<span class="op">=</span><span class="st">"lider"</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 x 2</span></span></span>
+<span><span class="co">#&gt;     rsu_raf nombre                                                              </span></span>
+<span><span class="co">#&gt;       <span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>                                                               </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span><span>  5</span><span style="text-decoration: underline;">010</span><span>677 </span><span style="color: #949494;">"</span><span>sindicato de empresa hipermercado valparaiso ltda. \" lider valpar~</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span><span> 15</span><span style="text-decoration: underline;">010</span><span>407 </span><span style="color: #949494;">"</span><span>sindicato nÂº1 de empresa supermercado lider de arica</span><span style="color: #949494;">"</span><span>              </span></span> </span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span><span> 14</span><span style="text-decoration: underline;">010</span><span>513 </span><span style="color: #949494;">"</span><span>sindicato de empresa lider valdivia</span><span style="color: #949494;">"</span><span>                               </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span><span>  8</span><span style="text-decoration: underline;">050</span><span>451 </span><span style="color: #949494;">"</span><span>sindicato nÂº 2 lider bio bio- sl2bb</span><span style="color: #949494;">"</span><span>                               </span></span> </span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span><span> 14</span><span style="text-decoration: underline;">010</span><span>540 </span><span style="color: #949494;">"</span><span>sindicato nÂº 3 empresa lider valdivia</span><span style="color: #949494;">"</span><span>                             </span></span> </span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span><span> 13</span><span style="text-decoration: underline;">130</span><span>990 </span><span style="color: #949494;">"</span><span>sindicato empresa lider velasquez oeste</span><span style="color: #949494;">"</span><span>                           </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span><span> 13</span><span style="text-decoration: underline;">090</span><span>970 </span><span style="color: #949494;">"</span><span>sindicato unificado lider lonquen ltda.</span><span style="color: #949494;">"</span><span>                           </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span><span> 12</span><span style="text-decoration: underline;">010</span><span>284 </span><span style="color: #949494;">"</span><span>sindicato hiper lider punta arenas</span><span style="color: #949494;">"</span><span>                                </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span><span>  5</span><span style="text-decoration: underline;">011</span><span>066 </span><span style="color: #949494;">"</span><span>sindicato interempresa de trabajadores de supermercados lider, val~</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span><span>  8</span><span style="text-decoration: underline;">010</span><span>928 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores express de lider-establecimiento san ped~</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ... with 23 more rows</span></span></span>
+<span><span class="fu"><a href="../reference/buscar_sindicatos.html">buscar_sindicatos</a></span><span class="op">(</span>empresa_buscada<span class="op">=</span><span class="st">"codelco"</span>,sindicato_buscado<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 52 x 2</span></span></span>
+<span><span class="co">#&gt;    rsu_raf nombre                                                               </span></span>
+<span><span class="co">#&gt;      <span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>                                                                </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span><span> 6</span><span style="text-decoration: underline;">010</span><span>813 </span><span style="color: #949494;">"</span><span>sindicato interempresa \"sintrauni\"</span><span style="color: #949494;">"</span><span>                               </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span><span> 6</span><span style="text-decoration: underline;">010</span><span>918 </span><span style="color: #949494;">"</span><span>sindicato nacional de trabajadores de mantenciÃ³n, minerÃ­a, montajes~</span></span>s~</span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span><span> 6</span><span style="text-decoration: underline;">010</span><span>025 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores sewell y mina nÂº8, de la empresa codelco ~</span></span>~</span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span><span> 6</span><span style="text-decoration: underline;">010</span><span>026 </span><span style="color: #949494;">"</span><span>sindicato profesional sewell y mina</span><span style="color: #949494;">"</span><span>                                </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span><span> 2</span><span style="text-decoration: underline;">020</span><span>002 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores nÂº 1 chuquicamata, codelco chile</span><span style="color: #949494;">"</span><span>         </span></span> </span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span><span> 2</span><span style="text-decoration: underline;">020</span><span>009 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores nÂº 2 de la division chuquicamata de codel~</span></span>~</span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span><span> 2</span><span style="text-decoration: underline;">020</span><span>036 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores nÂº 3 de empresa codelco-chile, division c~</span></span>~</span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span><span> 2</span><span style="text-decoration: underline;">020</span><span>041 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores supervisores rol-a de la empresa codelco ~</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span><span> 2</span><span style="text-decoration: underline;">020</span><span>053 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores de empresa nÂº 5, de codelco chile</span><span style="color: #949494;">"</span><span>        </span></span> </span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span><span> 2</span><span style="text-decoration: underline;">020</span><span>125 </span><span style="color: #949494;">"</span><span>sindicato de trabajadores radomiro tomic de la division codelco nor~</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ... with 42 more rows</span></span></span>
+<span><span class="fu"><a href="../reference/buscar_sindicatos.html">buscar_sindicatos</a></span><span class="op">(</span>empresa_buscada<span class="op">=</span><span class="st">""</span>,sindicato_buscado<span class="op">=</span><span class="st">"casa particular"</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 x 2</span></span></span>
+<span><span class="co">#&gt;    rsu_raf nombre                                                               </span></span>
+<span><span class="co">#&gt;      <span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>                                                                </span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span><span> 12</span><span style="text-decoration: underline;">010</span><span>227 sindicato interempresa de trabajadoras y trabajadores de casa partic~</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span><span> 13</span><span style="text-decoration: underline;">014</span><span>061 sindicato nacional interempresa de trabajadores inmigrantes de casa ~</span></span></span></code></pre></div>
 </div>
   </div>
 
@@ -159,7 +159,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer>

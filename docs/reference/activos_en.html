@@ -29,7 +29,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -72,55 +72,60 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">activos_en</span><span class="op">(</span>ano <span class="op">=</span> <span class="fl">2021</span>, mes <span class="op">=</span> <span class="fl">11</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">activos_en</span><span class="op">(</span>ano <span class="op">=</span> <span class="fl">2021</span>, mes <span class="op">=</span> <span class="fl">11</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>ano</dt>
 <dd><p>Año en el que se buscan sindicatos activos</p></dd>
+
+
 <dt>mes</dt>
 <dd><p>Mes en el que se buscan sindicatos activos. Por defecto noviembre 2021</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>una tibble con los sindicatos activos en el periodo consultado</p>
+    
+
+<p>una tibble con los sindicatos activos en el periodo consultado</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu">activos_en</span><span class="op">(</span>ano<span class="op">=</span><span class="fl">1990</span>,mes<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">activos_en</span><span class="op">(</span>ano<span class="op">=</span><span class="fl">1990</span>,mes<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2,814 x 15</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    region  rsu_raf nombre  estado tipo  direccion socios socias fecha_constituc~</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     13 13<span style="text-decoration: underline;">110</span>102 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ JOSE JOA~    110      0 1928-07-20      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      6  6<span style="text-decoration: underline;">020</span>004 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ VALDIVIA~     34      4 1929-04-05      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     13 13<span style="text-decoration: underline;">110</span>159 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ SERRANO ~     80     56 1984-12-20      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     10 10<span style="text-decoration: underline;">030</span>025 <span style="color: #949494;">"</span>SINDI~ DISUE~ SIND~ EJERCITO~     18      0 1980-11-05      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     14 14<span style="text-decoration: underline;">010</span>036 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ AV.ESPAN~     11      0 1970-06-14      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      7  7<span style="text-decoration: underline;">060</span>008 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ AVDA.PON~     32      2 1936-05-07      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      8  8<span style="text-decoration: underline;">030</span>047 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ M.BULNES~     15      0 1984-02-03      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     13 13<span style="text-decoration: underline;">040</span>068 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ FUNDO LA~      5      0 1988-05-26      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>      3  3<span style="text-decoration: underline;">010</span>053 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ ATACAMA ~     59      7 1985-08-02      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     13 13<span style="text-decoration: underline;">130</span>047 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ FDO.RINC~     34      6 1969-08-24      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span>    </span><span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>   </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>  </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>      </span><span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span>  </span><span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;date&gt;</span><span>          </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span><span>     13 13</span><span style="text-decoration: underline;">110</span><span>102 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ JOSE JOA~    110      0 1928-07-20      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span><span>      6  6</span><span style="text-decoration: underline;">020</span><span>004 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ VALDIVIA~     34      4 1929-04-05      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span><span>     13 13</span><span style="text-decoration: underline;">110</span><span>159 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ SERRANO ~     80     56 1984-12-20      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span><span>     10 10</span><span style="text-decoration: underline;">030</span><span>025 </span><span style="color: #949494;">"</span><span>SINDI~ DISUE~ SIND~ EJERCITO~     18      0 1980-11-05      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span><span>     14 14</span><span style="text-decoration: underline;">010</span><span>036 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ AV.ESPAN~     11      0 1970-06-14      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span><span>      7  7</span><span style="text-decoration: underline;">060</span><span>008 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ AVDA.PON~     32      2 1936-05-07      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span><span>      8  8</span><span style="text-decoration: underline;">030</span><span>047 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ M.BULNES~     15      0 1984-02-03      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span><span>     13 13</span><span style="text-decoration: underline;">040</span><span>068 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ FUNDO LA~      5      0 1988-05-26      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span><span>      3  3</span><span style="text-decoration: underline;">010</span><span>053 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ ATACAMA ~     59      7 1985-08-02      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span><span>     13 13</span><span style="text-decoration: underline;">130</span><span>047 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ FDO.RINC~     34      6 1969-08-24      </span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 2,804 more rows, and 6 more variables:</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fecha_ultima_directiva &lt;date&gt;, nombre_oficina &lt;chr&gt;, empresa &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rut_empresa &lt;chr&gt;, cae &lt;chr&gt;, total_socis &lt;dbl&gt;</span></span>
-<span class="r-in"><span class="fu">activos_en</span><span class="op">(</span>ano<span class="op">=</span><span class="fl">1990</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">activos_en</span><span class="op">(</span>ano<span class="op">=</span><span class="fl">1990</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3,299 x 15</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    region  rsu_raf nombre  estado tipo  direccion socios socias fecha_constituc~</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     13 13<span style="text-decoration: underline;">110</span>102 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ JOSE JOA~    110      0 1928-07-20      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      6  6<span style="text-decoration: underline;">020</span>004 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ VALDIVIA~     34      4 1929-04-05      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     13 13<span style="text-decoration: underline;">110</span>159 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ SERRANO ~     80     56 1984-12-20      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>      5  5<span style="text-decoration: underline;">030</span>086 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ TORCAZA ~      3      8 1990-07-20      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     10 10<span style="text-decoration: underline;">030</span>025 <span style="color: #949494;">"</span>SINDI~ DISUE~ SIND~ EJERCITO~     18      0 1980-11-05      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     14 14<span style="text-decoration: underline;">010</span>036 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ AV.ESPAN~     11      0 1970-06-14      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      7  7<span style="text-decoration: underline;">060</span>008 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ AVDA.PON~     32      2 1936-05-07      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>      8  8<span style="text-decoration: underline;">030</span>047 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ M.BULNES~     15      0 1984-02-03      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     13 13<span style="text-decoration: underline;">040</span>068 <span style="color: #949494;">"</span>SINDI~ RECESO SIND~ FUNDO LA~      5      0 1988-05-26      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>      3  3<span style="text-decoration: underline;">010</span>053 <span style="color: #949494;">"</span>SINDI~ ACTIVO SIND~ ATACAMA ~     59      7 1985-08-02      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span>    </span><span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>   </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>  </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;chr&gt;</span><span>      </span><span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span>  </span><span style="color: #949494;font-style: italic;">&lt;dbl&gt;</span><span> </span><span style="color: #949494;font-style: italic;">&lt;date&gt;</span><span>          </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span><span>     13 13</span><span style="text-decoration: underline;">110</span><span>102 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ JOSE JOA~    110      0 1928-07-20      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span><span>      6  6</span><span style="text-decoration: underline;">020</span><span>004 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ VALDIVIA~     34      4 1929-04-05      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span><span>     13 13</span><span style="text-decoration: underline;">110</span><span>159 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ SERRANO ~     80     56 1984-12-20      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span><span>      5  5</span><span style="text-decoration: underline;">030</span><span>086 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ TORCAZA ~      3      8 1990-07-20      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span><span>     10 10</span><span style="text-decoration: underline;">030</span><span>025 </span><span style="color: #949494;">"</span><span>SINDI~ DISUE~ SIND~ EJERCITO~     18      0 1980-11-05      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span><span>     14 14</span><span style="text-decoration: underline;">010</span><span>036 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ AV.ESPAN~     11      0 1970-06-14      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span><span>      7  7</span><span style="text-decoration: underline;">060</span><span>008 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ AVDA.PON~     32      2 1936-05-07      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span><span>      8  8</span><span style="text-decoration: underline;">030</span><span>047 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ M.BULNES~     15      0 1984-02-03      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span><span>     13 13</span><span style="text-decoration: underline;">040</span><span>068 </span><span style="color: #949494;">"</span><span>SINDI~ RECESO SIND~ FUNDO LA~      5      0 1988-05-26      </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span><span>      3  3</span><span style="text-decoration: underline;">010</span><span>053 </span><span style="color: #949494;">"</span><span>SINDI~ ACTIVO SIND~ ATACAMA ~     59      7 1985-08-02      </span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ... with 3,289 more rows, and 6 more variables:</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fecha_ultima_directiva &lt;date&gt;, nombre_oficina &lt;chr&gt;, empresa &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rut_empresa &lt;chr&gt;, cae &lt;chr&gt;, total_socis &lt;dbl&gt;</span></span>
@@ -138,7 +143,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

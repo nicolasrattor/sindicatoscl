@@ -477,14 +477,14 @@ head(activos_en(ano=1990,mes=1)[,c(1:4)])
 ```
 
     ## # A tibble: 6 x 4
-    ##   region  rsu_raf nombre                                                 estado 
-    ##    <dbl>    <dbl> <chr>                                                  <chr>  
-    ## 1     13 13110102 SINDICATO N° 3 INTEREMPRESA DE TRABAJADORES DE LAS IN~ ACTIVO 
-    ## 2      6  6020004 SINDICATO INTEREMPRESA DE TRABAJADORES DE LAS INDUSTR~ ACTIVO 
-    ## 3     13 13110159 SINDICATO DE EMPRESA PEDRO PABLO CASTILLO C.,          RECESO 
-    ## 4     10 10030025 SINDICATO DE TRABAJADORES ALAMOS DE LA EMPRESA ENRIQU~ DISUEL~
-    ## 5     14 14010036 SINDICATO DE TRABAJADORES DE EMPRESA ANDRES FRIED KOO~ RECESO 
-    ## 6      7  7060008 SINDICATO INTEREMPRESA DE TRABAJADORES DE las industr~ ACTIVO
+    ##   region  rsu_raf nombre                                                  estado
+    ##    <dbl>    <dbl> <chr>                                                   <chr> 
+    ## 1     13 13110102 SINDICATO N° 3 INTEREMPRESA DE TRABAJADORES DE LAS IND~ ACTIVO
+    ## 2      6  6020004 SINDICATO INTEREMPRESA DE TRABAJADORES DE LAS INDUSTRI~ ACTIVO
+    ## 3     13 13110159 SINDICATO DE EMPRESA PEDRO PABLO CASTILLO C.,           RECESO
+    ## 4     10 10030025 SINDICATO DE TRABAJADORES ALAMOS DE LA EMPRESA ENRIQUE~ DISUE~
+    ## 5     14 14010036 SINDICATO DE TRABAJADORES DE EMPRESA ANDRES FRIED KOOP~ RECESO
+    ## 6      7  7060008 SINDICATO INTEREMPRESA DE TRABAJADORES DE las industri~ ACTIVO
 
 ## Consultar por nombre sindicato o empresa
 

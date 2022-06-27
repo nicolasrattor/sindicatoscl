@@ -31,7 +31,7 @@ ventas, número de trabajadores y actividad económica."><!-- mathjax --><script
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -76,87 +76,89 @@ ventas, número de trabajadores y actividad económica.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">sii_agregar</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">sii_agregar</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="value">
     <h2>Value</h2>
-    <p>Una data frame donde las filas son los sindicatos. Se agrega info
+    
+
+<p>Una data frame donde las filas son los sindicatos. Se agrega info
 de sector económico de empresa,
 ventas, número de trabajadores y tasa de sindicalización del sindicato en la empresa</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="va">datos</span> <span class="op">&lt;-</span> <span class="fu">sii_agregar</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">rubro_sii</span>,useNA<span class="op">=</span><span class="st">"ifany"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">datos</span> <span class="op">&lt;-</span> <span class="fu">sii_agregar</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">rubro_sii</span>,useNA<span class="op">=</span><span class="st">"ifany"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                          0 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                   ACTIVIDADES ARTISTICAS, DE ENTRETENIMIENTO Y RECREATIVAS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         98 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         97 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                        ACTIVIDADES DE ALOJAMIENTO Y DE SERVICIO DE COMIDAS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        203 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        183 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                          ACTIVIDADES DE ATENCION DE LA SALUD HUMANA Y DE ASISTENCIA SOCIAL </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        212 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        206 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ACTIVIDADES DE LOS HOGARES COMO EMPLEADORES; ACTIVIDADES NO DIFERENCIADAS DE LOS HOGARES </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                          0 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                 ACTIVIDADES DE ORGANIZACIONES Y ORGANOS EXTRATERRITORIALES </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                          3 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                        ACTIVIDADES DE SERVICIOS ADMINISTRATIVOS Y DE APOYO </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        667 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        605 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                       ACTIVIDADES FINANCIERAS Y DE SEGUROS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        161 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        156 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                  ACTIVIDADES INMOBILIARIAS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         89 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                          ACTIVIDADES PROFESIONALES, CIENTIFICAS Y TECNICAS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        239 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ADMINISTRACION PUBLICA Y DEFENSA; PLANES DE SEGURIDAD SOCIAL DE AFILIACION OBLIGATORIA </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                          2 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                               AGRICULTURA, GANADERIA, SILVICULTURA Y PESCA </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        333 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACION DE VEHICULOS AUTOMOTORES Y MOTOCICLETAS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        392 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                               CONSTRUCCION </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        248 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                  ENSEÑANZA </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        942 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                            EXPLOTACION DE MINAS Y CANTERAS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        233 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                    INDUSTRIA MANUFACTURERA </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                       1375 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                               INFORMACION Y COMUNICACIONES </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        148 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                             OTRAS ACTIVIDADES DE SERVICIOS </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        370 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> SUMINISTRO DE AGUA; EVACUACION DE AGUAS RESIDUALES, GESTION DE DESECHOS Y DESCONTAMINACION </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         49 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                SUMINISTRO DE ELECTRICIDAD, GAS, VAPOR Y AIRE ACONDICIONADO </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        105 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                TRANSPORTE Y ALMACENAMIENTO </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        714 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                          Valor por Defecto </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         13 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACION DE VEHICULOS AUTOMOTORES Y MOTO </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        436 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           SUMINISTRO DE AGUA; EVACUACION DE AGUAS RESIDUALES, GESTION DE DESECHOS Y DESCON </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         75 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                          ACTIVIDADES PROFESIONALES, CIENTIFICAS Y TECNICAS </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        205 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ADMINISTRACION PUBLICA Y DEFENSA; PLANES DE SEGURIDAD SOCIAL DE AFILIACION OBLIGATORIA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                          3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                               AGRICULTURA, GANADERIA, SILVICULTURA Y PESCA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        323 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACION DE VEHICULOS AUTOMOTORES Y MOTOCICLETAS </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        381 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                               CONSTRUCCION </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        228 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                  ENSEÑANZA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        909 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                            EXPLOTACION DE MINAS Y CANTERAS </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        217 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                    INDUSTRIA MANUFACTURERA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                       1352 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                               INFORMACION Y COMUNICACIONES </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        135 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                             OTRAS ACTIVIDADES DE SERVICIOS </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        362 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SUMINISTRO DE AGUA; EVACUACION DE AGUAS RESIDUALES, GESTION DE DESECHOS Y DESCONTAMINACION </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         50 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                SUMINISTRO DE ELECTRICIDAD, GAS, VAPOR Y AIRE ACONDICIONADO </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         99 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                TRANSPORTE Y ALMACENAMIENTO </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        689 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                          Valor por Defecto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACION DE VEHICULOS AUTOMOTORES Y MOTO </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        419 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           SUMINISTRO DE AGUA; EVACUACION DE AGUAS RESIDUALES, GESTION DE DESECHOS Y DESCON </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         76 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           ADMINISTRACION PUBLICA Y DEFENSA; PLANES DE SEGURIDAD SOCIAL DE AFILIACION OBLIG </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         14 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         16 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           ACTIVIDADES DE LOS HOGARES COMO EMPLEADORES; ACTIVIDADES NO DIFERENCIADAS DE LOS </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                          0 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                       &lt;NA&gt; </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                        281 </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">ventas_sii</span>,useNA<span class="op">=</span><span class="st">"ifany"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">ventas_sii</span>,useNA<span class="op">=</span><span class="st">"ifany"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    1    2    3    4    5    6    7    8    9   10   11   12   13 &lt;NA&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  583   65   48   98   79  153  254  392  521  710 1184  573 2461  281 </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">datos</span><span class="op">[</span><span class="va">datos</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">&lt;=</span><span class="fl">1</span><span class="op">&amp;</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">)</span>,<span class="op">]</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6657</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">datos</span><span class="op">[</span><span class="va">datos</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">&lt;=</span><span class="fl">1</span>,<span class="op">]</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  554   62   47   81   72  132  231  354  497  684 1135  547 2403  281 </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">datos</span><span class="op">[</span><span class="va">datos</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">&lt;=</span><span class="fl">1</span><span class="op">&amp;</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">)</span>,<span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6398</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">datos</span><span class="op">[</span><span class="va">datos</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">&lt;=</span><span class="fl">1</span>,<span class="op">]</span><span class="op">$</span><span class="va">tasa_sindicalizacion</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  0.0000  0.0530  0.1630  0.2311  0.3595  1.0000     598 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.0000  0.0530  0.1636  0.2297  0.3571  1.0000     554 </span>
 </code></pre></div>
     </div>
   </div>
@@ -171,7 +173,7 @@ ventas, número de trabajadores y tasa de sindicalización del sindicato en la e
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

@@ -29,7 +29,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -72,52 +72,57 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">activos_historico</span><span class="op">(</span>desde <span class="op">=</span> <span class="fl">2020</span>, hasta <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">activos_historico</span><span class="op">(</span>desde <span class="op">=</span> <span class="fl">2020</span>, hasta <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>desde</dt>
 <dd><p>Año desde el cuál partir haciendo el conteo. 2020 por defecto</p></dd>
+
+
 <dt>hasta</dt>
 <dd><p>Año hasta el cuál partir haciendo el conteo. 2021 por defecto</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Una tibble con el número de sindicatos y socios en cada mes del periodo
+    
+
+<p>Una tibble con el número de sindicatos y socios en cada mes del periodo
 indicado</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">activos_historico</span><span class="op">(</span>desde<span class="op">=</span><span class="fl">2020</span>,hasta<span class="op">=</span><span class="fl">2021</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">activos_historico</span><span class="op">(</span>desde<span class="op">=</span><span class="fl">2020</span>,hasta<span class="op">=</span><span class="fl">2021</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ano mes sindicatos afiliads</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2020   1      12589  1265533</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2020   2      12550  1263785</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2020   3      12535  1264111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2020   4      12485  1261895</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2020   5      12485  1261851</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2020   6      12499  1262408</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2020   7      12505  1262893</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2020   8      12509  1262790</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2020   9      12520  1263401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2020  10      12547  1264482</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020  11      12587  1265836</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2020  12      12614  1266958</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2021   1      12628  1267914</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2021   2      12624  1268030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2021   3      12635  1268480</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 2021   4      12638  1269175</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 2021   5      12658  1270999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 2021   6      12675  1271929</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 2021   7      12715  1273070</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 2021   8      12770  1275135</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 2021   9      12813  1275582</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 2021  10      12857  1277331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 2021  11      12628  1264765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 2021  12      12373  1247580</span>
-<span class="r-in"></span>
-<span class="r-in"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2020   1      12660  1289102</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2020   2      12626  1287510</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2020   3      12614  1288171</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2020   4      12565  1285984</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2020   5      12565  1285940</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2020   6      12579  1286573</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2020   7      12585  1287058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2020   8      12589  1287094</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2020   9      12600  1287721</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2020  10      12628  1289125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020  11      12669  1290509</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2020  12      12695  1292468</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2021   1      12710  1293574</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2021   2      12706  1293724</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2021   3      12718  1294263</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 2021   4      12722  1294987</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 2021   5      12742  1296798</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 2021   6      12758  1298176</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 2021   7      12801  1299550</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 2021   8      12855  1301732</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 2021   9      12901  1302407</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 2021  10      12947  1304493</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 2021  11      12793  1295950</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 2021  12      12644  1286916</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -132,7 +137,7 @@ indicado</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>
