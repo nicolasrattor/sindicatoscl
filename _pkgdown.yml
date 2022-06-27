@@ -1,5 +1,7 @@
 name: "sindicatoscl"
 output_dir: "."
+development:
+  mode: auto
 navbar:
   structure:
     left:  [intro, reference, articles, tutorials, news]

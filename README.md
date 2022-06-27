@@ -35,7 +35,7 @@ El objetivo principal del paquete es disponer de una *dataframe* con el
 listado de todos los sindicatos activos y en receso en Chile y, sus
 principales características.
 
-El *dataframe* `sindicatos` contiene 39439 observaciones para 15
+El *dataframe* `sindicatos` contiene 39777 observaciones para 15
 variables:
 
 <table>
@@ -61,7 +61,7 @@ la casa matriz de la empresa (16 regiones)
 </tr>
 <tr>
 <td style="text-align:left;width: 10cm; ">
-rsu\_raf
+rsu_raf
 </td>
 <td style="text-align:left;width: 10cm; ">
 Identificador del sindicato
@@ -119,7 +119,7 @@ Número de socias de sindicato registrados en último trámite
 </tr>
 <tr>
 <td style="text-align:left;width: 10cm; ">
-fecha\_constitucion
+fecha_constitucion
 </td>
 <td style="text-align:left;width: 10cm; ">
 Fecha de constitución del sindicato
@@ -127,7 +127,7 @@ Fecha de constitución del sindicato
 </tr>
 <tr>
 <td style="text-align:left;width: 10cm; ">
-fecha\_ultima\_directiva
+fecha_ultima_directiva
 </td>
 <td style="text-align:left;width: 10cm; ">
 Fecha de elección de directiva. Se usa como proxy de último trámite
@@ -135,7 +135,7 @@ Fecha de elección de directiva. Se usa como proxy de último trámite
 </tr>
 <tr>
 <td style="text-align:left;width: 10cm; ">
-nombre\_oficina
+nombre_oficina
 </td>
 <td style="text-align:left;width: 10cm; ">
 Nombre oficina de Inspección del Trabajo en que se hizo la constitución
@@ -152,7 +152,7 @@ Nombre de la empresa
 </tr>
 <tr>
 <td style="text-align:left;width: 10cm; ">
-rut\_empresa
+rut_empresa
 </td>
 <td style="text-align:left;width: 10cm; ">
 Rut de la empresa o de todas las empresas en las que existe el sindicato
@@ -169,7 +169,7 @@ Clasificador de Actividad Económica de la empresa
 </tr>
 <tr>
 <td style="text-align:left;width: 10cm; ">
-total\_socis
+total_socis
 </td>
 <td style="text-align:left;width: 10cm; ">
 Número de socios y socias de sindicato registrados en último trámite
@@ -191,7 +191,7 @@ sindicatos
 region
 </th>
 <th style="text-align:right;">
-rsu\_raf
+rsu_raf
 </th>
 <th style="text-align:left;">
 nombre
@@ -214,6 +214,20 @@ SINDICATO DE TRABAJADORES DE LA EMPRESA DE SERVICIOS GENESIS
 </td>
 <td style="text-align:left;">
 RECESO
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+8050713
+</td>
+<td style="text-align:left;">
+SINDICATO INTEREMPRESAS RAS
+</td>
+<td style="text-align:left;">
+ACTIVO
 </td>
 </tr>
 <tr>
@@ -274,20 +288,6 @@ DE LA ALIMENTACIÓN.
 ACTIVO
 </td>
 </tr>
-<tr>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-10010761
-</td>
-<td style="text-align:left;">
-SINDICATO DE EMPRESA “SEGURIDAD KAPPES”
-</td>
-<td style="text-align:left;">
-ACTIVO
-</td>
-</tr>
 </tbody>
 </table>
 
@@ -305,7 +305,7 @@ empresas <- empresas_sindicatos_activos()
 ```
 
 El número de observaciones de la data resultante es igual al número de
-empresas con sindicatos activos en Chile (4781). La nueva data además
+empresas con sindicatos activos en Chile (4571). La nueva data además
 agrega el número de sindicatos existentes en cada empresa, el total de
 afiliados y el tamaño promedio de los sindicatos en cada empresa. El rut
 de la empresa es el rut real, por lo que la información puede vincularse
@@ -315,7 +315,7 @@ a otras fuentes de datos de empresas.
 <thead>
 <tr>
 <th style="text-align:left;">
-rut\_empresa
+rut_empresa
 </th>
 <th style="text-align:right;">
 sindicatos
@@ -324,7 +324,7 @@ sindicatos
 afiliads
 </th>
 <th style="text-align:right;">
-tamano\_promedio
+tamano_promedio
 </th>
 </tr>
 </thead>
@@ -334,13 +334,13 @@ tamano\_promedio
 81537600
 </td>
 <td style="text-align:right;">
-72
+73
 </td>
 <td style="text-align:right;">
-9755
+9626
 </td>
 <td style="text-align:right;">
-135.48611
+131.86301
 </td>
 </tr>
 <tr>
@@ -348,13 +348,13 @@ tamano\_promedio
 76134941
 </td>
 <td style="text-align:right;">
-48
+49
 </td>
 <td style="text-align:right;">
-9229
+9212
 </td>
 <td style="text-align:right;">
-192.27083
+188.00000
 </td>
 </tr>
 <tr>
@@ -365,10 +365,10 @@ tamano\_promedio
 46
 </td>
 <td style="text-align:right;">
-6462
+6426
 </td>
 <td style="text-align:right;">
-140.47826
+139.69565
 </td>
 </tr>
 <tr>
@@ -376,13 +376,13 @@ tamano\_promedio
 76879810
 </td>
 <td style="text-align:right;">
-35
+33
 </td>
 <td style="text-align:right;">
-4480
+3942
 </td>
 <td style="text-align:right;">
-128.00000
+119.45455
 </td>
 </tr>
 <tr>
@@ -390,13 +390,13 @@ tamano\_promedio
 61704000
 </td>
 <td style="text-align:right;">
-30
+31
 </td>
 <td style="text-align:right;">
-13770
+13808
 </td>
 <td style="text-align:right;">
-459.00000
+445.41935
 </td>
 </tr>
 <tr>
@@ -404,13 +404,13 @@ tamano\_promedio
 83150900
 </td>
 <td style="text-align:right;">
-26
+29
 </td>
 <td style="text-align:right;">
-836
+839
 </td>
 <td style="text-align:right;">
-32.15385
+28.93103
 </td>
 </tr>
 </tbody>
@@ -425,7 +425,7 @@ summary(empresas$sindicatos)
 ```
 
     ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    ##   1.000   1.000   1.000   1.534   1.000  72.000
+    ##   1.000   1.000   1.000   1.535   1.000  73.000
 
 Este indicador se puede obtener para cada sector económico utilizando
 los datos del Servicio de Impuestos Internos (ver viñeta
@@ -450,7 +450,7 @@ serie %>%
 ## Serie histórica activos
 
 ``` r
-serie <- activos_historico(desde=2020,hasta=2021)
+serie <- activos_historico(desde=2020,hasta=2022)
 serie$fecha <- lubridate::make_date(year=serie$ano,month=serie$mes)
 plot(serie$fecha,serie$sindicatos,type = "l")
 
@@ -492,7 +492,7 @@ head(activos_en(ano=1990,mes=1)[,c(1:4)])
 buscar_sindicatos(empresa_buscada="walmart",sindicato_buscado="lider")[,c(2,3)]
 ```
 
-    ## # A tibble: 32 x 2
+    ## # A tibble: 33 x 2
     ##     rsu_raf nombre                                                              
     ##       <dbl> <chr>                                                               
     ##  1  5010677 "sindicato de empresa hipermercado valparaiso ltda. \" lider valpar~
@@ -500,12 +500,12 @@ buscar_sindicatos(empresa_buscada="walmart",sindicato_buscado="lider")[,c(2,3)]
     ##  3 14010513 "sindicato de empresa lider valdivia"                               
     ##  4  8050451 "sindicato nº 2 lider bio bio- sl2bb"                               
     ##  5 14010540 "sindicato nº 3 empresa lider valdivia"                             
-    ##  6 13090925 "sindicato de empresa lider supermercado maipu ltda"                
-    ##  7 13130990 "sindicato empresa lider velasquez oeste"                           
-    ##  8 13090970 "sindicato unificado lider lonquen ltda."                           
-    ##  9 12010284 "sindicato hiper lider punta arenas"                                
-    ## 10  5011066 "sindicato interempresa de trabajadores de supermercados lider, val~
-    ## # ... with 22 more rows
+    ##  6 13130990 "sindicato empresa lider velasquez oeste"                           
+    ##  7 13090970 "sindicato unificado lider lonquen ltda."                           
+    ##  8 12010284 "sindicato hiper lider punta arenas"                                
+    ##  9  5011066 "sindicato interempresa de trabajadores de supermercados lider, val~
+    ## 10  8010928 "sindicato de trabajadores express de lider-establecimiento san ped~
+    ## # ... with 23 more rows
 
 ``` r
 buscar_sindicatos(empresa_buscada="codelco",sindicato_buscado="")[,c(2,3)]
@@ -541,7 +541,7 @@ buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3
 Registros administrativos de acceso público de la Dirección del Trabajo.
 Disponibles para descarga en:
 <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>.
-Los datos utilizados en el paquete fueron descargados el 16 de enero de
+Los datos utilizados en el paquete fueron descargados el 27 de junio de
 2022.
 
 # Uso de los datos
