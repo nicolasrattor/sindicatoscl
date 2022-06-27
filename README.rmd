@@ -124,7 +124,7 @@ ggsave(
 ## Serie histórica activos
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE}
-serie <- activos_historico(desde=2020,hasta=2021)
+serie <- activos_historico(desde=2020,hasta=2022)
 serie$fecha <- lubridate::make_date(year=serie$ano,month=serie$mes)
 plot(serie$fecha,serie$sindicatos,type = "l")
 
