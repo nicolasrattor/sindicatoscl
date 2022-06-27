@@ -95,7 +95,7 @@ Este indicador se puede obtener para cada sector económico utilizando los datos
 
 ## Serie histórica sindicatos constituidos
 
-```{r eval=FALSE, message=FALSE, warning=FALSE}
+```{r include=FALSE, message=FALSE, warning=FALSE}
 serie <- constitucion_anual()
 plot(serie$ano,serie$sindicatos,type = "l")
 
@@ -107,7 +107,7 @@ serie %>%
   theme_ipsum()
 ```
 
-```{r echo=FALSE, eval=FALSE}
+```{r echo=FALSE}
 ggsave(
   plot = last_plot(),
   filename = "man/figures/constituidos.png",
@@ -123,7 +123,7 @@ ggsave(
 
 ## Serie histórica activos
 
-```{r eval=FALSE, message=FALSE, warning=FALSE}
+```{r include=FALSE, message=FALSE, warning=FALSE}
 serie <- activos_historico(desde=2020,hasta=2022)
 serie$fecha <- lubridate::make_date(year=serie$ano,month=serie$mes)
 plot(serie$fecha,serie$sindicatos,type = "l")
@@ -137,7 +137,7 @@ serie %>%
 ```
 
 
-```{r echo=FALSE, eval=FALSE}
+```{r echo=FALSE}
 ggsave(
   plot = last_plot(),
   filename = "man/figures/activos.png",

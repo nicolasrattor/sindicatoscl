@@ -52,7 +52,7 @@ tasas %>% mutate_at(c(2:4), ~.*100)
 
 Solo considerando metodología 3: Población Afiliada (excluye afiliados independientes) / Total de ocupados
 
-```{r eval=FALSE}
+```{r include=FALSE}
 merge(tasa_sindicalizacion("dt"),tasas,all = TRUE) %>% 
   select(ano,tasa3,tasa_sind3) %>% 
   rename(sindicatoscl=tasa3,
