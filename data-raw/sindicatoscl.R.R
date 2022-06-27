@@ -1,6 +1,6 @@
 
 ## datos de https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx
-sindicatos <- janitor::clean_names(readxl::read_excel("data-raw/archivo_sindicatos_20220116.xlsx"))
+sindicatos <- janitor::clean_names(readxl::read_excel("data-raw/archivo_sindicatos_20220627.xlsx"))
 
 ## Cargar paquetes
 library(readxl)
@@ -96,10 +96,10 @@ usethis::use_data(sindicatos,sii,overwrite = TRUE)
 
 #### data ene ####
 
-categoria_ocupacion<-janitor::clean_names(openxlsx::read.xlsx("https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/cuadros-estadisticos/series-de-tiempo-nueva-calibraci%C3%B3n-proyecciones-de-poblaci%C3%B3n-censo-2017/categoria.xlsx?sfvrsn=70dc54db_70",sheet = 2,startRow = 6) )
+categoria_ocupacion<-janitor::clean_names(openxlsx::read.xlsx("https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/cuadros-estadisticos/series-vigentes/categoria.xlsx?sfvrsn=70dc54db_82",sheet = 2,startRow = 6) )
 nombres<-names(categoria_ocupacion)
 nombres<-nombres[c(1,2,4-1,6-1,8-1,10-1,12-1,14-1,16-1,18-1,20-1,22-1,24-1,26-1)]
-categoria_ocupacion<-openxlsx::read.xlsx("https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/cuadros-estadisticos/series-de-tiempo-nueva-calibraci%C3%B3n-proyecciones-de-poblaci%C3%B3n-censo-2017/categoria.xlsx?sfvrsn=70dc54db_70",sheet = 2,startRow = 7)
+categoria_ocupacion<-openxlsx::read.xlsx("https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/cuadros-estadisticos/series-vigentes/categoria.xlsx?sfvrsn=70dc54db_82",sheet = 2,startRow = 7)
 categoria_ocupacion<-categoria_ocupacion[1:(nrow(categoria_ocupacion)-9),c(1,2,4,6,8,10,12,14,16,18,20,22,24,26)]
 names(categoria_ocupacion)<-nombres
 

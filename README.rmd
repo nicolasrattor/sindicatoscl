@@ -169,7 +169,7 @@ buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3
 
 # Sobre los datos usados
 
-Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r "16 de enero de 2022"`. 
+Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r "27 de junio de 2022"`. 
 
 # Uso de los datos
 
