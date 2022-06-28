@@ -120,7 +120,8 @@ tasa_sindicalizacion <- function(metodo="res"){
     2016	,
     2017	,
     2018	,
-    2019),
+    2019  ,
+    2020),
 
     tasa_sind1=c(
     13.4	,
@@ -152,7 +153,8 @@ tasa_sindicalizacion <- function(metodo="res"){
     13.9	,
     14	  ,
     14	  ,
-    13.1),
+    13.1,
+    15.5),
 
     tasa_sind2=c(
     16.2      	,
@@ -184,7 +186,8 @@ tasa_sindicalizacion <- function(metodo="res"){
     16.5      	,
     17	        ,
     17   	      ,
-    15.9),
+    15.9,
+    18.9),
 
     tasa_sind3=c(
     19.2,
@@ -216,7 +219,8 @@ tasa_sindicalizacion <- function(metodo="res"){
     19.6,
     20.5,
     20.6,
-    18.9)
+    18.9,
+    22.2)
 
     )
 
