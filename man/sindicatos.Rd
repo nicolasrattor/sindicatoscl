@@ -12,8 +12,10 @@ Una data frame con variables:
 \item{rut_empresa}{Rut de la empresa}
 \item{empresa}{Nombre de la empresa}
 \item{estado}{Estado del sindicato: ACTIVO, RECESO, DISUELTO, CADUCADO O ELIMINADO}
-\item{tipo}{Tipo de sindicato: SINDICATO EMPRESA, SINDICATO ESTABLECIMIENTO,
-SINDICATO INDEPENDIENTE, SINDICATO INTER EMPRESA o SINDICATO TRANSITORIO}
+\item{tipo}{Tipo de organización: SINDICATO EMPRESA, SINDICATO ESTABLECIMIENTO,
+SINDICATO INDEPENDIENTE, SINDICATO INTER EMPRESA, SINDICATO TRANSITORIO,
+ASOCIACION DE FUNCIONARIOS, FEDERACION DE SINDICATOS, FEDERACION DE ASOCIACIONES,
+CONFEDERACION DE SINDICATOS, CONFEDERACION DE ASOCIACIONES o CENTRAL DE TRABAJADORES}
 \item{direccion}{Dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa}
 \item{region}{Región de la dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa}
 \item{socios}{Número de socios de sindicato registrados en último trámite}
@@ -32,12 +34,24 @@ SINDICATO INDEPENDIENTE, SINDICATO INTER EMPRESA o SINDICATO TRANSITORIO}
 sindicatos
 }
 \description{
-Registro administrativo de sindicatos activos y en receso en Chile (1920-2021).
+Registro administrativo de sindicatos, federaciones, confederaciones y
+asociaciones de funcionarios activos y en receso en Chile (1920-2026).
 }
 \details{
-Cada fila es un sindicato.
+Cada fila es una organización.
 
-El registro es de la Dirección del Trabajo, la institución que principalmente
+Desde la actualización de 2026-07-04, la Dirección del Trabajo dejó de publicar
+un registro histórico completo y pasó a publicar solo las organizaciones activas
+con directiva vigente (incluyendo el detalle de sus dirigentes, ver
+\code{\link{dirigentes}}). Para no perder cobertura histórica, este dataset
+combina ese archivo con el snapshot histórico previamente publicado: las
+organizaciones presentes en el archivo nuevo quedan con su información más
+reciente, y las que solo estaban en el snapshot anterior (recesos, disueltos y
+caducados de años previos) se mantienen tal cual. Por lo mismo, a partir de esta
+actualización \code{tipo} incluye también federaciones, confederaciones y
+asociaciones de funcionarios, no solo sindicatos base.
+
+La Dirección del Trabajo es la institución que principalmente
 produce y centraliza los datos sobre sindicatos en Chile,
 al ser el lugar en donde los sindicatos deben registrarse para constituirse como tales,
 además de entregar información sobre sus elecciones internas y
@@ -66,8 +80,5 @@ sobreestimación en el número de afiliados/as de cada sindicato.
 Por ende, es necesario tomar este dato como un proxy,
 cuyo ajuste con la realidad es probable que disminuya mientras más nos alejamos
 de la fecha en la que es descargada la base de datos.
-}
-\examples{
-
 }
 \keyword{datasets}

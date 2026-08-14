@@ -25,7 +25,6 @@ Además, se cargan otros paquetes para la manipulación de datos:
 ```{r warning=FALSE, message=FALSE}
 library(dplyr)
 library(ggplot2)
-library(hrbrthemes)
 ```
 
 
@@ -43,7 +42,7 @@ data_frame(variables=names(sindicatos),
                         "Identificador del sindicato",
                         "Nombre del sindicato",
                         "Estado del sindicato: ACTIVO, RECESO, DISUELTO, CADUCADO O ELIMINADO",
-                        "Tipo de sindicato: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER EMPRESA o TRANSITORIO",
+                        "Tipo de organización: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER EMPRESA, TRANSITORIO, ASOCIACION DE FUNCIONARIOS, FEDERACION DE SINDICATOS, FEDERACION DE ASOCIACIONES, CONFEDERACION DE SINDICATOS, CONFEDERACION DE ASOCIACIONES o CENTRAL DE TRABAJADORES",
                         "Dirección a la que se asocia el sindicato. Suele ser la de la casa matriz de la empresa",
                         "Número de socios de sindicato registrados en último trámite",
                         "Número de socias de sindicato registrados en último trámite",
@@ -104,7 +103,7 @@ serie %>%
   geom_line() +
   labs(x = "año", y = "sindicatos",
        title = "Número de sindicatos constituidos cada año") +
-  theme_ipsum()
+  theme_minimal()
 ```
 
 ```{r echo=FALSE}
@@ -133,7 +132,7 @@ serie %>%
   geom_line() +
   labs(x = "año", y = "sindicatos",
        title = "Número de sindicatos activos cada mes desde 2020") +
-  theme_ipsum()
+  theme_minimal()
 ```
 
 
@@ -169,7 +168,7 @@ buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3
 
 # Sobre los datos usados
 
-Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r "27 de junio de 2022"`. 
+Registros administrativos de acceso público de la Dirección del Trabajo. Disponibles para descarga en: <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>. Los datos utilizados en el paquete fueron descargados el `r "27 de junio de 2022"` y actualizados el `r "4 de julio de 2026"` (organizaciones activas con directiva vigente; la cobertura histórica de recesos/disueltos/caducados previos a esa fecha se conserva de la descarga de 2022). 
 
 # Uso de los datos
 

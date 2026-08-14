@@ -24,7 +24,6 @@ Además, se cargan otros paquetes para la manipulación de datos:
 ``` r
 library(dplyr)
 library(ggplot2)
-library(hrbrthemes)
 ```
 
 # Uso del paquete
@@ -35,7 +34,7 @@ El objetivo principal del paquete es disponer de una *dataframe* con el
 listado de todos los sindicatos activos y en receso en Chile y, sus
 principales características.
 
-El *dataframe* `sindicatos` contiene 39777 observaciones para 15
+El *dataframe* `sindicatos` contiene 45792 observaciones para 15
 variables:
 
 <table>
@@ -88,8 +87,10 @@ Estado del sindicato: ACTIVO, RECESO, DISUELTO, CADUCADO O ELIMINADO
 tipo
 </td>
 <td style="text-align:left;width: 10cm; ">
-Tipo de sindicato: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER
-EMPRESA o TRANSITORIO
+Tipo de organización: EMPRESA, ESTABLECIMIENTO, INDEPENDIENTE, INTER
+EMPRESA, TRANSITORIO, ASOCIACION DE FUNCIONARIOS, FEDERACION DE
+SINDICATOS, FEDERACION DE ASOCIACIONES, CONFEDERACION DE SINDICATOS,
+CONFEDERACION DE ASOCIACIONES o CENTRAL DE TRABAJADORES
 </td>
 </tr>
 <tr>
@@ -184,112 +185,14 @@ Acá las primeras 5 filas y columnas de `sindicatos`
 sindicatos
 ```
 
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-region
-</th>
-<th style="text-align:right;">
-rsu_raf
-</th>
-<th style="text-align:left;">
-nombre
-</th>
-<th style="text-align:left;">
-estado
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-9040014
-</td>
-<td style="text-align:left;">
-SINDICATO DE TRABAJADORES DE LA EMPRESA DE SERVICIOS GENESIS
-</td>
-<td style="text-align:left;">
-RECESO
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-8050713
-</td>
-<td style="text-align:left;">
-SINDICATO INTEREMPRESAS RAS
-</td>
-<td style="text-align:left;">
-ACTIVO
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-8010556
-</td>
-<td style="text-align:left;">
-SINDICATO EMPRESA " GASTON A. SALDIAS RETAMAL"
-</td>
-<td style="text-align:left;">
-RECESO
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-13014833
-</td>
-<td style="text-align:left;">
-SINDICATO INTEREMPRESA NACIONAL DE TRABAJADORES SUBCONTRATADOS DE
-SERVICIOS Y ACTIVIDADES ANEXOS
-</td>
-<td style="text-align:left;">
-ACTIVO
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-13014733
-</td>
-<td style="text-align:left;">
-SINDICATO Nº1 DE EMPRESA HGR
-</td>
-<td style="text-align:left;">
-RECESO
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-13110102
-</td>
-<td style="text-align:left;">
-SINDICATO N° 3 INTEREMPRESA DE TRABAJADORES DE LAS INDUSTRIAS DEL PAN Y
-DE LA ALIMENTACIÓN.
-</td>
-<td style="text-align:left;">
-ACTIVO
-</td>
-</tr>
-</tbody>
-</table>
+| region |  rsu_raf | nombre                                                                                                             | estado |
+|-------:|---------:|:-------------------------------------------------------------------------------------------------------------------|:-------|
+|      9 |  9040014 | SINDICATO DE TRABAJADORES DE LA EMPRESA DE SERVICIOS GENESIS                                                       | RECESO |
+|      8 |  8010556 | SINDICATO EMPRESA ” GASTON A. SALDIAS RETAMAL”                                                                     | RECESO |
+|     13 | 13014733 | SINDICATO Nº1 DE EMPRESA HGR                                                                                       | RECESO |
+|     13 | 13130541 | SINDICATO DE TRABAJADORES DE EMPRESA FRANCISCO CASTRO ESTEVEZ DE SAN BERNARDO                                      | RECESO |
+|     13 | 13012886 | SINDICATO DE TRABAJADORES DEL ESTABLECIMIENTO DE RANCAGUA Nº 544 DE LA EMPRESA EULEN CHILE S.A.                    | RECESO |
+|     13 | 13230504 | SINDICATO INTEREMPRESA DE TRABAJADORES DEL TRANSPORTE Y SERVICIOS ASOCIADOS, EMPRESAS AFINES Y ACTIVIDADES CONEXAS | RECESO |
 
 ## Pasar la data al nivel empresa
 
@@ -305,116 +208,20 @@ empresas <- empresas_sindicatos_activos()
 ```
 
 El número de observaciones de la data resultante es igual al número de
-empresas con sindicatos activos en Chile (4571). La nueva data además
+empresas con sindicatos activos en Chile (5650). La nueva data además
 agrega el número de sindicatos existentes en cada empresa, el total de
 afiliados y el tamaño promedio de los sindicatos en cada empresa. El rut
 de la empresa es el rut real, por lo que la información puede vincularse
 a otras fuentes de datos de empresas.
 
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-rut_empresa
-</th>
-<th style="text-align:right;">
-sindicatos
-</th>
-<th style="text-align:right;">
-afiliads
-</th>
-<th style="text-align:right;">
-tamano_promedio
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-81537600
-</td>
-<td style="text-align:right;">
-73
-</td>
-<td style="text-align:right;">
-9626
-</td>
-<td style="text-align:right;">
-131.86301
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-76134941
-</td>
-<td style="text-align:right;">
-49
-</td>
-<td style="text-align:right;">
-9212
-</td>
-<td style="text-align:right;">
-188.00000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-17005635
-</td>
-<td style="text-align:right;">
-46
-</td>
-<td style="text-align:right;">
-6426
-</td>
-<td style="text-align:right;">
-139.69565
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-76879810
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-3942
-</td>
-<td style="text-align:right;">
-119.45455
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-61704000
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-13808
-</td>
-<td style="text-align:right;">
-445.41935
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-83150900
-</td>
-<td style="text-align:right;">
-29
-</td>
-<td style="text-align:right;">
-839
-</td>
-<td style="text-align:right;">
-28.93103
-</td>
-</tr>
-</tbody>
-</table>
+| rut_empresa | sindicatos | afiliads | tamano_promedio |
+|:------------|-----------:|---------:|----------------:|
+| 76134941    |        118 |    12029 |       101.94068 |
+| 81537600    |         78 |     9069 |       116.26923 |
+| 17005635    |         53 |     5732 |       108.15094 |
+| 61704000    |         33 |    13208 |       400.24242 |
+| 76879810    |         31 |     3685 |       118.87097 |
+| 83150900    |         29 |      827 |        28.51724 |
 
 Con estos datos se puede construir un indicador simple de *fragmentación
 sindical*: en promedio existen 1,53 sindicatos por empresa y en más del
@@ -425,7 +232,7 @@ summary(empresas$sindicatos)
 ```
 
     ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    ##   1.000   1.000   1.000   1.535   1.000  73.000
+    ##   1.000   1.000   1.000   1.593   1.000 118.000
 
 Este indicador se puede obtener para cada sector económico utilizando
 los datos del Servicio de Impuestos Internos (ver viñeta
@@ -433,34 +240,9 @@ los datos del Servicio de Impuestos Internos (ver viñeta
 
 ## Serie histórica sindicatos constituidos
 
-``` r
-serie <- constitucion_anual()
-plot(serie$ano,serie$sindicatos,type = "l")
-
-serie %>% 
-  ggplot(aes(ano, sindicatos)) + 
-  geom_line() +
-  labs(x = "año", y = "sindicatos",
-       title = "Número de sindicatos constituidos cada año") +
-  theme_ipsum()
-```
-
 <img src="man/figures/constituidos.png">
 
 ## Serie histórica activos
-
-``` r
-serie <- activos_historico(desde=2020,hasta=2022)
-serie$fecha <- lubridate::make_date(year=serie$ano,month=serie$mes)
-plot(serie$fecha,serie$sindicatos,type = "l")
-
-serie %>% 
-  ggplot(aes(fecha, sindicatos)) + 
-  geom_line() +
-  labs(x = "año", y = "sindicatos",
-       title = "Número de sindicatos activos cada mes desde 2020") +
-  theme_ipsum()
-```
 
 <img src="man/figures/activos.png">
 
@@ -470,21 +252,21 @@ serie %>%
 nrow(activos_en(ano=1990,mes=1))
 ```
 
-    ## [1] 2814
+    ## [1] 2982
 
 ``` r
 head(activos_en(ano=1990,mes=1)[,c(1:4)])
 ```
 
-    ## # A tibble: 6 x 4
+    ## # A tibble: 6 × 4
     ##   region  rsu_raf nombre                                                  estado
-    ##    <dbl>    <dbl> <chr>                                                   <chr> 
-    ## 1     13 13110102 SINDICATO N° 3 INTEREMPRESA DE TRABAJADORES DE LAS IND~ ACTIVO
-    ## 2      6  6020004 SINDICATO INTEREMPRESA DE TRABAJADORES DE LAS INDUSTRI~ ACTIVO
-    ## 3     13 13110159 SINDICATO DE EMPRESA PEDRO PABLO CASTILLO C.,           RECESO
-    ## 4     10 10030025 SINDICATO DE TRABAJADORES ALAMOS DE LA EMPRESA ENRIQUE~ DISUE~
-    ## 5     14 14010036 SINDICATO DE TRABAJADORES DE EMPRESA ANDRES FRIED KOOP~ RECESO
-    ## 6      7  7060008 SINDICATO INTEREMPRESA DE TRABAJADORES DE las industri~ ACTIVO
+    ##    <dbl>    <int> <chr>                                                   <chr> 
+    ## 1      6  6020004 "SINDICATO INTEREMPRESA DE TRABAJADORES DE LAS INDUSTR… ACTIVO
+    ## 2     13 13110159 "SINDICATO DE EMPRESA PEDRO PABLO CASTILLO C.,"         RECESO
+    ## 3     10 10030025 "SINDICATO DE TRABAJADORES ALAMOS DE LA EMPRESA ENRIQU… DISUE…
+    ## 4     14 14010036 "SINDICATO DE TRABAJADORES DE EMPRESA ANDRES FRIED KOO… RECESO
+    ## 5      8  8030047 "SINDICATO DE TRABAJADORES DE LA EMPRESA JOSE SERRA MA… RECESO
+    ## 6     13 13040068 "SINDICATO DE TRABAJADORES DE EMPRESA AGRICOLA LA PROV… RECESO
 
 ## Consultar por nombre sindicato o empresa
 
@@ -492,49 +274,58 @@ head(activos_en(ano=1990,mes=1)[,c(1:4)])
 buscar_sindicatos(empresa_buscada="walmart",sindicato_buscado="lider")[,c(2,3)]
 ```
 
-    ## # A tibble: 33 x 2
+    ## # A tibble: 51 × 2
     ##     rsu_raf nombre                                                              
-    ##       <dbl> <chr>                                                               
-    ##  1  5010677 "sindicato de empresa hipermercado valparaiso ltda. \" lider valpar~
-    ##  2 15010407 "sindicato nº1 de empresa supermercado lider de arica"              
-    ##  3 14010513 "sindicato de empresa lider valdivia"                               
-    ##  4  8050451 "sindicato nº 2 lider bio bio- sl2bb"                               
-    ##  5 14010540 "sindicato nº 3 empresa lider valdivia"                             
-    ##  6 13130990 "sindicato empresa lider velasquez oeste"                           
-    ##  7 13090970 "sindicato unificado lider lonquen ltda."                           
-    ##  8 12010284 "sindicato hiper lider punta arenas"                                
-    ##  9  5011066 "sindicato interempresa de trabajadores de supermercados lider, val~
-    ## 10  8010928 "sindicato de trabajadores express de lider-establecimiento san ped~
-    ## # ... with 23 more rows
+    ##       <int> <chr>                                                               
+    ##  1  5061063 "sindicato interempresa lider v region"                             
+    ##  2  8011191 "sindicato interempresa autonomo lider collao"                      
+    ##  3  9010646 "sindicato de establecimiento lider express caupolican 687"         
+    ##  4 13021374 "sindicato inter-empresa lider san miguel de empresa wal-mart chile"
+    ##  5 13090607 "sindicato de trabajadores de lider de la empresa magallanes s.a."  
+    ##  6  4010223 "sindicato de trabajadores de empresa hipermercado la serena ltda. …
+    ##  7  5010677 "sindicato de empresa hipermercado valparaiso ltda. \" lider valpar…
+    ##  8  8030252 "sindicato de la empresa hipermercado lider los angeles"            
+    ##  9 15010407 "sindicato nº1 de empresa supermercado lider de arica"              
+    ## 10 14010513 "sindicato de empresa lider valdivia"                               
+    ## # ℹ 41 more rows
 
 ``` r
 buscar_sindicatos(empresa_buscada="codelco",sindicato_buscado="")[,c(2,3)]
 ```
 
-    ## # A tibble: 52 x 2
+    ## # A tibble: 23 × 2
     ##    rsu_raf nombre                                                               
-    ##      <dbl> <chr>                                                                
+    ##      <int> <chr>                                                                
     ##  1 6010813 "sindicato interempresa \"sintrauni\""                               
-    ##  2 6010918 "sindicato nacional de trabajadores de mantención, minería, montajes~
-    ##  3 6010025 "sindicato de trabajadores sewell y mina nº8, de la empresa codelco ~
-    ##  4 6010026 "sindicato profesional sewell y mina"                                
-    ##  5 2020002 "sindicato de trabajadores nº 1 chuquicamata, codelco chile"         
-    ##  6 2020009 "sindicato de trabajadores nº 2 de la division chuquicamata de codel~
-    ##  7 2020036 "sindicato de trabajadores nº 3 de empresa codelco-chile, division c~
-    ##  8 2020041 "sindicato de trabajadores supervisores rol-a de la empresa codelco ~
-    ##  9 2020053 "sindicato de trabajadores de empresa nº 5, de codelco chile"        
-    ## 10 2020125 "sindicato de trabajadores radomiro tomic de la division codelco nor~
-    ## # ... with 42 more rows
+    ##  2 6010025 "sindicato de trabajadores sewell y mina nº8, de la empresa codelco …
+    ##  3 6010026 "sindicato profesional sewell y mina"                                
+    ##  4 2010067 "sindicato de trabajadores nº 1, codelco chile division codelco nort…
+    ##  5 6010031 "sindicato de trabajadores coya pangal nº4 de la empresa codelco chi…
+    ##  6 6010032 "sindicato de trabajadores coya y pangal nº2 de la empresa codelco c…
+    ##  7 6010153 "sindicato de trabajadores de empresa coya country club."            
+    ##  8 6010237 "sindicato de trabajadores de la empresa codelco chile, division tal…
+    ##  9 2010060 "sindicato de trabajadores nº 2, codelco chile, division codelco nor…
+    ## 10 3020005 "sindicato nº 1 de la empresa codelco chile division salvador"       
+    ## # ℹ 13 more rows
 
 ``` r
 buscar_sindicatos(empresa_buscada="",sindicato_buscado="casa particular")[,c(2,3)]
 ```
 
-    ## # A tibble: 2 x 2
-    ##    rsu_raf nombre                                                               
-    ##      <dbl> <chr>                                                                
-    ## 1 12010227 sindicato interempresa de trabajadoras y trabajadores de casa partic~
-    ## 2 13014061 sindicato nacional interempresa de trabajadores inmigrantes de casa ~
+    ## # A tibble: 21 × 2
+    ##     rsu_raf nombre                                                              
+    ##       <int> <chr>                                                               
+    ##  1 12010227 sindicato interempresa de trabajadoras y trabajadores de casa parti…
+    ##  2 13014061 sindicato nacional interempresa de trabajadores inmigrantes de casa…
+    ##  3  2020046 sindicato interempresa de trabajadores de casa particular y activid…
+    ##  4  5050084 sindicato interempresa de trabajadora de casa particular y activida…
+    ##  5  6010261 sindicato interempresa de trabajadores de casa particular y activid…
+    ##  6  6020124 sindicato interempresa de trabajadores de casa particular y activid…
+    ##  7  7020030 sindicato interempresa de trabajadores de casa particular de la pro…
+    ##  8 11020038 sindicato interempresas de trabajadoras de casa particular          
+    ##  9 13080307 sindicato interempresa de trabajadoras de casa particular y activid…
+    ## 10  8030181 sindicato de interempresa de trabajadores de casa particular de pro…
+    ## # ℹ 11 more rows
 
 # Sobre los datos usados
 
@@ -542,7 +333,9 @@ Registros administrativos de acceso público de la Dirección del Trabajo.
 Disponibles para descarga en:
 <https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx>.
 Los datos utilizados en el paquete fueron descargados el 27 de junio de
-2022.
+2022 y actualizados el 4 de julio de 2026 (organizaciones activas con
+directiva vigente; la cobertura histórica de recesos/disueltos/caducados
+previos a esa fecha se conserva de la descarga de 2022).
 
 # Uso de los datos
 

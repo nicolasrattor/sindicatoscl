@@ -24,7 +24,4 @@ cuando cumpla con uno o más de los siguientes atributos:
 Es identificado como contribuyente de primera vategoría,
 presenta declaración jurada 1887 y/o es declarante vigente de IVA
 }
-\examples{
-
-}
 \keyword{datasets}

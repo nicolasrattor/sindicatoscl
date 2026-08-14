@@ -1,0 +1,22 @@
+#' Dirigentes
+#'
+#' Detalle de la directiva vigente de cada organización presente en la
+#' actualización del archivo de la Dirección del Trabajo de 2026-07-04.
+#'
+#' Cada fila es un cargo de directiva (un dirigente puede aparecer una vez por
+#' cargo). Solo cubre organizaciones activas con directiva vigente a la fecha de
+#' esa descarga; no tiene cobertura histórica (para eso ver \code{\link{sindicatos}}).
+#'
+#' @format Una data frame con variables:
+#' \describe{
+#' \item{rsu_raf}{Identificador del sindicato, cruza con \code{\link{sindicatos}}}
+#' \item{nombre_dirigente}{Nombre del dirigente}
+#' \item{cargo}{Cargo en la directiva: PRESIDENTE, SECRETARIO, TESORERO o DIRECTOR}
+#' \item{inicio_mandato}{Fecha de inicio del mandato}
+#' \item{fin_mandato}{Fecha de término del mandato}
+#' }
+#'
+#' @source \url{https://tramites.dirtrab.cl/VentanillaTransparencia/Transparencia/RerporteRRLLOrg.aspx}
+#' @examples
+#'
+"dirigentes"

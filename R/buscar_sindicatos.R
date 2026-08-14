@@ -20,12 +20,18 @@ buscar_sindicatos <- function(empresa_buscada="",sindicato_buscado=""){
   sindicato_buscado <- tolower(sindicato_buscado)
   sindicatos$nombre <- tolower(sindicatos$nombre)
   sindicatos$empresa <- tolower(sindicatos$empresa)
-  aux <- dplyr::filter(sindicatos,
-                       stringr::str_detect(nombre, sindicato_buscado)
-  )
-  aux <- dplyr::filter(aux,
-                stringr::str_detect(empresa, empresa_buscada)
-  )
+
+  aux <- sindicatos
+
+  # stringr::str_detect() ya no acepta un patrón vacío ("") para "no filtrar";
+  # si la palabra clave viene vacía, simplemente se omite ese filtro.
+  if (nzchar(sindicato_buscado)) {
+    aux <- dplyr::filter(aux, stringr::str_detect(nombre, sindicato_buscado))
+  }
+  if (nzchar(empresa_buscada)) {
+    aux <- dplyr::filter(aux, stringr::str_detect(empresa, empresa_buscada))
+  }
+
   #dplyr::select(aux,rsu_raf,nombre,empresa,total_socis)
   aux
 

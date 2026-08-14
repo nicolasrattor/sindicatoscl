@@ -5,7 +5,7 @@ test_that("multiplication works", {
 # Los 5 primeros test son utilizado por Riva Quiroga en su paquete "guaguas"
 
 test_that("sindicatos nrow matches docs", {
-  expect_equal(39777, nrow(sindicatos))
+  expect_equal(45792, nrow(sindicatos))
 })
 
 test_that("sindicatos years don't go below 1920", {
@@ -20,10 +20,12 @@ test_that("sindicato estado possible values are only five", {
   expect_equal(n_estado_values, estado_values)
 })
 
-test_that("sindicato tipo possible values are only five", {
-  n_estado_values <- 5
-  estado_values <- length(unique(sindicatos$tipo))
-  expect_equal(n_estado_values, estado_values)
+test_that("sindicato tipo possible values are only eleven", {
+  # desde la actualización 2026-07-04 se agregaron federaciones, confederaciones,
+  # asociaciones de funcionarios y central de trabajadores (antes solo 5 tipos)
+  n_tipo_values <- 11
+  tipo_values <- length(unique(sindicatos$tipo))
+  expect_equal(n_tipo_values, tipo_values)
 })
 
 test_that("sindicatos total_socis don't go below 0", {
@@ -43,4 +45,3 @@ test_that("fecha última directiva no puede ser menor a la de constitución", {
   longitud_tabla <- length(table((sindicatos$fecha_constitucion>sindicatos$fecha_ultima_directiva)))
   expect_equal(solo_verdadero , longitud_tabla)
 })
-
